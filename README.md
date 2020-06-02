@@ -3,7 +3,7 @@
 
 ## 讲师课件下载地址
 
-请大家通过该链接查看讲师课件并进行下载，链接:
+请大家通过该链接查看讲师课件并进行下载，链接:https://pan.baidu.com/s/1GOuXJfnlERQs8bI8HNwPrQ  密码:zlua
 
 
 ## 仓库目录结构说明
