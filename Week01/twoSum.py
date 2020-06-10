@@ -32,11 +32,17 @@ class Solution(object):
         #         if nums[i] + nums[j] == target:
         #             return [i, j]
         # 击败53%
+        # dict = {}
+        # for ind, num in enumerate(nums):  # 创建hash表
+        #     dict[num] = ind
+        # for ind, num in enumerate(nums):  # 遍历hash表
+        #     j = dict.get(target - num)
+        #     if j and ind != j:  # 排除[2,3] 4这种情况
+        #         return [ind, j]
+        # 击败78%
         dict = {}
-        for ind, num in enumerate(nums):  # 创建hash表
+        for ind, num in enumerate(nums):
+            if dict.get(target - num) is not None:
+                return [dict.get(target - num), ind]
             dict[num] = ind
-        for ind, num in enumerate(nums):  # 遍历hash表
-            j = dict.get(target - num)
-            if j and ind != j:  # 排除[2,3] 4这种情况
-                return [ind, j]
 # leetcode submit region end(Prohibit modification and deletion)
