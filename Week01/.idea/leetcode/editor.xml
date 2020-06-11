@@ -27,6 +27,14 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[206]反转链表.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[206]反转链表.py" />
+              <option name="questionId" value="206" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[283]移动零.py">
           <value>
             <LeetcodeEditor>
@@ -40,6 +48,14 @@
             <LeetcodeEditor>
               <option name="path" value="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[70]爬楼梯.py" />
               <option name="questionId" value="70" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[92]反转链表 II.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[92]反转链表 II.py" />
+              <option name="questionId" value="92" />
             </LeetcodeEditor>
           </value>
         </entry>
