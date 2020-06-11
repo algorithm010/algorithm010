@@ -11,6 +11,14 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[141]环形链表.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[141]环形链表.py" />
+              <option name="questionId" value="141" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[15]三数之和.py">
           <value>
             <LeetcodeEditor>
@@ -32,6 +40,14 @@
             <LeetcodeEditor>
               <option name="path" value="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[206]反转链表.py" />
               <option name="questionId" value="206" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[24]两两交换链表中的节点.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[24]两两交换链表中的节点.py" />
+              <option name="questionId" value="24" />
             </LeetcodeEditor>
           </value>
         </entry>
