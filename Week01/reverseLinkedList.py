@@ -27,11 +27,24 @@ class Solution(object):
         :type head: ListNode
         :rtype: ListNode
         """
-        pre = None
-        while head:
-            tmp = head.next
-            head.next = pre
-            pre,head = head,tmp
-        return pre
+        # pre = None#击败97%
+        # while head:
+        #     tmp = head.next
+        #     head.next = pre
+        #     pre, head = head, tmp
+        # return pre
+
+        #递归解法 重要的是边界条件和每层递归要做的事情
+        # 这里要做什么？node->next,以及存储上一层的节点以便连接
+        # 边界是什么，如果node为空，返回pre
+        return self._reverse(head)
+
+    def _reverse(self,node,pre=None):#击败38%
+        if not node:#如果节点不存在了
+            return pre
+        tmp = node.next
+        node.next = pre
+        return self._reverse(tmp,node)
+
 
 # leetcode submit region end(Prohibit modification and deletion)
