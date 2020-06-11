@@ -74,7 +74,9 @@ class Solution(object):
         # 外层循环+双指针 + 预处理去重 击败76%
         nums.sort()
         res = []
-        for i in range(len(nums)):
+        for i in range(len(nums)-2):
+            if nums[i]>0:#plus this line ,you can beat 93%
+                break
             if i > 0 and nums[i] == nums[i - 1]:
                 continue
             left, right = i + 1, len(nums) - 1
@@ -90,7 +92,7 @@ class Solution(object):
                         left = left + 1
                     while (left < right) and nums[right] == nums[right - 1]:
                         right = right - 1
-                    left = left + 1
+                    left = left + 1 #put the two lines, you can
                     right = right - 1
         return res
 
