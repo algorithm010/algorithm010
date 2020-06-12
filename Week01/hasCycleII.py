@@ -72,24 +72,48 @@ class Solution(object):
     #     # if walk here head==None, so we just return None
     #     return None
     # 击败28%
+    # def detectCycle(self, head: ListNode) -> ListNode:
+    #     if not head:
+    #         return None
+    #     intersect_node = self.interseet(head)
+    #     if not intersect_node:  # if interset is None
+    #         return None
+    #     tmp = head
+    #     while tmp != intersect_node:
+    #         tmp, intersect_node = tmp.next, intersect_node.next
+    #     return intersect_node
+    #
+    # def interseet(self, head: ListNode) -> ListNode:
+    #     fast, slow = head, head
+    #     while fast and fast.next:
+    #         fast = fast.next.next
+    #         slow = slow.next
+    #         if slow == fast:
+    #             return slow  # return the intersect
+    #     return None
+    #击败47%
+    # def detectCycle(self, head: ListNode) -> ListNode:
+    #     slow = fast = head
+    #     while fast and fast.next:
+    #         slow, fast = slow.next, fast.next.next
+    #         if slow == fast:
+    #             break
+    #     else:
+    #         return None
+    #     while head != slow:
+    #         slow, head = slow.next, head.next
+    #     return head
+    #击败65%
     def detectCycle(self, head: ListNode) -> ListNode:
-        if not head:
-            return None
-        intersect_node = self.interseet(head)
-        if not intersect_node:  # if interset is None
-            return None
-        tmp = head
-        while tmp != intersect_node:
-            tmp, intersect_node = tmp.next, intersect_node.next
-        return intersect_node
-
-    def interseet(self, head: ListNode) -> ListNode:
-        fast, slow = head, head
-        while fast.next and fast.next.next:
-            fast = fast.next.next
-            slow = slow.next
-            if slow == fast:
-                return slow  # return the intersect
+        fast = slow = finder = head
+        while fast and fast.next:
+            fast, slow = fast.next.next, slow.next
+            if fast == slow:
+                while slow != finder:
+                    slow, finder = slow.next, finder.next
+                return slow
         return None
+
+
 
 # leetcode submit region end(Prohibit modification and deletion)
