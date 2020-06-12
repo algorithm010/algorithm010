@@ -27,6 +27,14 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[155]最小栈.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[155]最小栈.py" />
+              <option name="questionId" value="155" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[15]三数之和.py">
           <value>
             <LeetcodeEditor>
@@ -51,6 +59,14 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[20]有效的括号.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[20]有效的括号.py" />
+              <option name="questionId" value="20" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[24]两两交换链表中的节点.py">
           <value>
             <LeetcodeEditor>
@@ -72,6 +88,14 @@
             <LeetcodeEditor>
               <option name="path" value="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[283]移动零.py" />
               <option name="questionId" value="283" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[678]有效的括号字符串.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[678]有效的括号字符串.py" />
+              <option name="questionId" value="678" />
             </LeetcodeEditor>
           </value>
         </entry>
