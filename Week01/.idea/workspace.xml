@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47cbd133-64be-4f5b-b071-d5e84c7221dd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/largestRectangleArea.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maxSlidingWindow.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/leetcode/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/leetcode/editor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -19,6 +19,7 @@
     <SUITE FILE_PATH="coverage/Week01$largestRectangleArea.coverage" NAME="largestRectangleArea Coverage Results" MODIFIED="1592013298149" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Week01$_84_.coverage" NAME="[84]柱状图中最大的矩形 Coverage Results" MODIFIED="1591981393419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn" />
     <SUITE FILE_PATH="coverage/Week01$linkListTest.coverage" NAME="linkListTest Coverage Results" MODIFIED="1591970600564" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Week01$maxSlidingWindow.coverage" NAME="maxSlidingWindow Coverage Results" MODIFIED="1592018872480" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Week01$3Sum.coverage" NAME="3Sum Coverage Results" MODIFIED="1591860422144" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FUSProjectUsageTrigger">
@@ -35,23 +36,23 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="32" />
+          <entry key="py" value="34" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="32" />
+          <entry key="Python" value="34" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Python Console" value="371" />
-          <entry key="py" value="5610" />
+          <entry key="Python Console" value="439" />
+          <entry key="py" value="6324" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="5981" />
+          <entry key="Python" value="6763" />
         </counts>
       </usages-collector>
     </session>
@@ -61,18 +62,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hasCycleII.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="109" column="35" selection-start-line="109" selection-start-column="35" selection-end-line="109" selection-end-column="35" />
-              <folding>
-                <marker date="1591955967477" expanded="true" signature="789:794" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reverseKGroup.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -110,7 +99,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/largestRectangleArea.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="253">
@@ -118,6 +107,27 @@
               <folding>
                 <marker date="1592013482943" expanded="true" signature="2217:2713" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/maxSlidingWindow.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="263">
+              <caret line="69" column="25" lean-forward="true" selection-start-line="69" selection-start-column="25" selection-end-line="69" selection-end-column="25" />
+              <folding>
+                <marker date="1592018922409" expanded="true" signature="1678:2085" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[239]滑动窗口最大值.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="122">
+              <caret line="37" column="34" lean-forward="true" selection-end-line="49" />
             </state>
           </provider>
         </entry>
@@ -190,6 +200,7 @@
         <option value="$PROJECT_DIR$/MinStack.py" />
         <option value="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[84]柱状图中最大的矩形.py" />
         <option value="$PROJECT_DIR$/largestRectangleArea.py" />
+        <option value="$PROJECT_DIR$/maxSlidingWindow.py" />
       </list>
     </option>
   </component>
@@ -242,29 +253,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.largestRectangleArea">
-    <configuration name="3Sum" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Week01" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/3Sum.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.maxSlidingWindow">
     <configuration name="[84]柱状图中最大的矩形" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Week01" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -331,6 +320,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="maxSlidingWindow" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Week01" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/maxSlidingWindow.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="reverseKGroup" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Week01" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -354,19 +365,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.3Sum" />
       <item itemvalue="Python.linkListTest" />
       <item itemvalue="Python.reverseKGroup" />
       <item itemvalue="Python.[84]柱状图中最大的矩形" />
       <item itemvalue="Python.largestRectangleArea" />
+      <item itemvalue="Python.maxSlidingWindow" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.maxSlidingWindow" />
         <item itemvalue="Python.largestRectangleArea" />
         <item itemvalue="Python.[84]柱状图中最大的矩形" />
         <item itemvalue="Python.reverseKGroup" />
         <item itemvalue="Python.linkListTest" />
-        <item itemvalue="Python.3Sum" />
       </list>
     </recent_temporary>
   </component>
@@ -393,7 +404,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49919224" visible="true" weight="0.32876712" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4983845" weight="0.3561644" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4983845" weight="0.25205478" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -406,8 +417,8 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="leetcode" order="3" side_tool="true" weight="0.23263328" />
-      <window_info anchor="right" id="SciView" order="4" />
+      <window_info anchor="right" id="leetcode" order="3" side_tool="true" weight="0.23990306" />
+      <window_info anchor="right" id="SciView" order="4" weight="0.32956383" />
       <window_info anchor="right" id="Database" order="5" />
     </layout>
     <layout-to-restore>
@@ -797,6 +808,23 @@
           <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
           <folding>
             <marker date="1592013482943" expanded="true" signature="2217:2713" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[239]滑动窗口最大值.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="37" column="34" lean-forward="true" selection-end-line="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/maxSlidingWindow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="69" column="25" lean-forward="true" selection-start-line="69" selection-start-column="25" selection-end-line="69" selection-end-column="25" />
+          <folding>
+            <marker date="1592018922409" expanded="true" signature="1678:2085" ph="..." />
           </folding>
         </state>
       </provider>
