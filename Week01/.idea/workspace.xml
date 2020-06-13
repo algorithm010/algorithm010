@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47cbd133-64be-4f5b-b071-d5e84c7221dd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/maxSlidingWindow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/leetcode/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/leetcode/editor.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/每日一题6_13_爬楼梯.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,23 +35,23 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="34" />
+          <entry key="py" value="35" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="34" />
+          <entry key="Python" value="35" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Python Console" value="439" />
-          <entry key="py" value="6324" />
+          <entry key="Python Console" value="455" />
+          <entry key="py" value="6339" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="6763" />
+          <entry key="Python" value="6794" />
         </counts>
       </usages-collector>
     </session>
@@ -111,7 +110,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/maxSlidingWindow.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="263">
@@ -119,6 +118,15 @@
               <folding>
                 <marker date="1592018922409" expanded="true" signature="1678:2085" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/每日一题6_13_爬楼梯.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -146,18 +154,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="184">
               <caret line="54" column="18" lean-forward="true" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/linkListTest.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="55" column="23" lean-forward="true" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
-              <folding>
-                <marker date="1591970598365" expanded="true" signature="228:233" ph="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -201,6 +197,7 @@
         <option value="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[84]柱状图中最大的矩形.py" />
         <option value="$PROJECT_DIR$/largestRectangleArea.py" />
         <option value="$PROJECT_DIR$/maxSlidingWindow.py" />
+        <option value="$PROJECT_DIR$/每日一题6_13_爬楼梯.py" />
       </list>
     </option>
   </component>
@@ -403,7 +400,7 @@
       <window_info id="Favorites" order="2" sideWeight="0.5020408" side_tool="true" weight="0.14135703" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49919224" visible="true" weight="0.32876712" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49919224" weight="0.32876712" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4983845" weight="0.25205478" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -413,7 +410,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5016155" side_tool="true" weight="0.3561644" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49919224" weight="0.32876712" />
-      <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.4983845" weight="0.32876712" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="12" sideWeight="0.4983845" visible="true" weight="0.32876712" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -826,6 +823,13 @@
           <folding>
             <marker date="1592018922409" expanded="true" signature="1678:2085" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/每日一题6_13_爬楼梯.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
         </state>
       </provider>
     </entry>
