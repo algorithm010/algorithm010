@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 # Author : Ray
 # Data : 2020/6/14 5:32 PM
-
+from typing import List
 class Solution:
     def findBestValue(self, arr: List[int], target: int) -> int:
         #这种接法就是应该是贪心吧？？如果匹配过程中，该元素都与均值匹配，那么就替换
