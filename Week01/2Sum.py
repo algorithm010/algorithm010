@@ -27,7 +27,7 @@ class Solution(object):
         # 2.hash表记录 两次hash
         # 3.一次hash表
         # 击败18%
-        # for i in range(len(nums)):
+        # for i in range(len(nums)-1):
         #     for j in range(i + 1, len(nums)):
         #         if nums[i] + nums[j] == target:
         #             return [i, j]

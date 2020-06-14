@@ -39,18 +39,18 @@ class Solution(object):
         #                 res.add((nums[i],nums[j],nums[m]))
         # return list([list(item) for item in res])
         # 2.hash表+两重循环 击败5%
-        # hashmap = {}
-        # nums.sort()
-        # res = set()
-        # for ind, num in enumerate(nums):
-        #     hashmap[num] = ind
-        # for i in range(len(nums)):
-        #     for j in range(i + 1, len(nums)):
-        #         target = 0 - nums[i] - nums[j]
-        #         if hashmap.get(target) is not None and hashmap[target] > j:
-        #             # Only need to check if the target value on the right side of (j)
-        #             res.add((nums[i], nums[j], target))
-        # return list(res)
+        hashmap = {}
+        nums.sort()
+        res = set()
+        for ind, num in enumerate(nums):
+            hashmap[num] = ind
+        for i in range(len(nums)):
+            for j in range(i + 1, len(nums)):
+                target = 0 - nums[i] - nums[j]
+                if hashmap.get(target) is not None and hashmap[target] > j:
+                    # Only need to check if the target value on the right side of (j)
+                    res.add((nums[i], nums[j], target))
+        return list(res)
 
         # 外层循环+双指针 击败7%
         # nums.sort()

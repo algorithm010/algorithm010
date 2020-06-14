@@ -54,7 +54,7 @@ class Solution(object):
         index_0 = 0
         for i in range(len(nums)):
             if nums[i] != 0:
-                nums[index_0],nums[i] = nums[i],nums[index_0]
+                nums[index_0], nums[i] = nums[i], nums[index_0]
                 index_0 = index_0 + 1
 
         return nums
