@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47cbd133-64be-4f5b-b071-d5e84c7221dd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/NOTE.md" beforeDir="false" afterPath="$PROJECT_DIR$/NOTE.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/每日一题6_14_转变数组使数组和接近目标值.py" beforeDir="false" afterPath="$PROJECT_DIR$/每日一题6_14_转变数组使数组和接近目标值.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +71,7 @@
         <entry file="file://$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[20]有效的括号.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="253">
-              <caret line="46" column="20" lean-forward="true" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
+              <caret line="46" column="20" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -81,7 +80,7 @@
         <entry file="file://$PROJECT_DIR$/MinStack.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="158">
-              <caret line="60" column="18" lean-forward="true" selection-start-line="60" selection-start-column="18" selection-end-line="60" selection-end-column="18" />
+              <caret line="60" column="18" selection-start-line="60" selection-start-column="18" selection-end-line="60" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -90,7 +89,7 @@
         <entry file="file://$PROJECT_DIR$/largestRectangleArea.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="253">
-              <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
+              <caret line="85" selection-start-line="85" selection-end-line="85" />
               <folding>
                 <marker date="1592013482943" expanded="true" signature="2217:2713" ph="..." />
               </folding>
@@ -102,7 +101,7 @@
         <entry file="file://$PROJECT_DIR$/maxSlidingWindow.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="263">
-              <caret line="69" column="25" lean-forward="true" selection-start-line="69" selection-start-column="25" selection-end-line="69" selection-end-column="25" />
+              <caret line="69" column="25" selection-start-line="69" selection-start-column="25" selection-end-line="69" selection-end-column="25" />
               <folding>
                 <marker date="1592018922409" expanded="true" signature="1678:2085" ph="..." />
               </folding>
@@ -132,7 +131,7 @@
         <entry file="file://$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[239]滑动窗口最大值.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="122">
-              <caret line="37" column="34" lean-forward="true" selection-end-line="49" />
+              <caret line="37" column="34" selection-end-line="49" />
             </state>
           </provider>
         </entry>
@@ -150,7 +149,7 @@
         <entry file="file://$PROJECT_DIR$/isValidbrackets.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="184">
-              <caret line="54" column="18" lean-forward="true" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="18" />
+              <caret line="54" column="18" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -759,7 +758,7 @@
     <entry file="file://$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[20]有效的括号.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
-          <caret line="46" column="20" lean-forward="true" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
+          <caret line="46" column="20" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -773,14 +772,14 @@
     <entry file="file://$PROJECT_DIR$/isValidbrackets.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
-          <caret line="54" column="18" lean-forward="true" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="18" />
+          <caret line="54" column="18" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MinStack.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="158">
-          <caret line="60" column="18" lean-forward="true" selection-start-line="60" selection-start-column="18" selection-end-line="60" selection-end-column="18" />
+          <caret line="60" column="18" selection-start-line="60" selection-start-column="18" selection-end-line="60" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -801,7 +800,7 @@
     <entry file="file://$PROJECT_DIR$/largestRectangleArea.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
-          <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
+          <caret line="85" selection-start-line="85" selection-end-line="85" />
           <folding>
             <marker date="1592013482943" expanded="true" signature="2217:2713" ph="..." />
           </folding>
@@ -811,14 +810,14 @@
     <entry file="file://$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[239]滑动窗口最大值.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="122">
-          <caret line="37" column="34" lean-forward="true" selection-end-line="49" />
+          <caret line="37" column="34" selection-end-line="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/maxSlidingWindow.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="263">
-          <caret line="69" column="25" lean-forward="true" selection-start-line="69" selection-start-column="25" selection-end-line="69" selection-end-column="25" />
+          <caret line="69" column="25" selection-start-line="69" selection-start-column="25" selection-end-line="69" selection-end-column="25" />
           <folding>
             <marker date="1592018922409" expanded="true" signature="1678:2085" ph="..." />
           </folding>
