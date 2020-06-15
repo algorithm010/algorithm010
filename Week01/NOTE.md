@@ -351,6 +351,19 @@ return nums1
 
 --
 
+#### 删除排序数组中的重复数
+1.双指针 用指针记录不同元素的个数 思路比较天马行空 但是有迹可循 就是 用一个指针记录当前不同元素的个数，每次不相同时，就将这个指针更新，并且将num[i+1]赋值给指针指向的地址
+```
+point = 0 # 指向前一个重复的数值
+for i in range(len(nums) - 1):
+    if nums[i] == nums[i + 1]:
+        continue
+    else:
+        point = point + 1
+        nums[point] = nums[i+1] 
+return point+1
+```
+
 
 
 
