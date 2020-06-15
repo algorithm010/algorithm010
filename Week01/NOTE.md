@@ -379,6 +379,7 @@ def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
 
 #### 删除排序数组中的重复数
 1.双指针 用指针记录不同元素的个数 思路比较天马行空 但是有迹可循 就是 用一个指针记录当前不同元素的个数，每次不相同时，就将这个指针更新，并且将num[i+1]赋值给指针指向的地址
+
 ```
 point = 0 # 指向前一个重复的数值
 for i in range(len(nums) - 1):
@@ -388,6 +389,27 @@ for i in range(len(nums) - 1):
         point = point + 1
         nums[point] = nums[i+1] 
 return point+1
+```
+
+#### 最长公共前缀
+1. 先确定列表中最短字符串的长度size LCP应该小于等于它 然后外层循环遍历size长度，内层循环取每个字符的前size位，如果所有的都相匹配，则返回
+
+```
+if not strs: return ''
+min_size = min([len(x) for x in strs])  # 公共前缀最长只会这么长
+for i in range(min_size, 0, -1):
+    tmp = strs[0][:i]  # 当前待比较的公共前缀子串
+    if all(s[:i] == tmp for s in strs):
+        return tmp
+return ''
+```
+改进版
+```
+prefix = strs[0] if strs else ''
+while True:
+    if all(s.startswith(prefix) for s in strs):
+        return prefix
+    prefix = prefix[:-1]
 ```
 
 
