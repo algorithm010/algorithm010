@@ -261,6 +261,100 @@ while head:
 return None
 ```
 
+--
+
+#### 加一
+判断进位，如果末位是9->末位修改为0 继续判断 
+如果不为0，则该位置+1后return即可
+如果出现999这种情形，那循环只会讲digits处理为000，需要在前面添1
+
+```
+for i in range(len(digits)-1,-1,-1):
+    if digits[i] != 9:
+        digits[i] += 1
+        return digits
+    digits[i] = 0 #[9,9,9,9]的情况处理完再返回
+return [1]+digits    
+```
+
+
+--
+
+#### 旋转数组
+1. 切片后重新赋值
+
+```
+#tmp = nums[len(nums) - k:] + nums[:len(nums) - k]
+#for i in range(len(tmp)):#这种赋值就比较傻
+#    nums[i] = tmp[i]
+
+k = k % len(nums)#要考虑k大于数组长度的情形
+nums[:] = nums[len(nums) - k:] + nums[:len(nums) - k]
+```
+
+2.暴力解法 类似于bubble排序，k轮交换(从后往前)，每一轮中交换len(nums)次
+
+```
+for i in range(k%len(nums)):  # 旋转k次
+    for j in range(len(nums) - 1, 0, -1):#反序调转
+        nums[j - 1], nums[j] = nums[j], nums[j - 1]
+```
+
+3.reverse三次，先reverse整个List，再reverse List[:k] 第三次reverse List[k:]
+
+
+4. 最大公约数解法，还未掌握
+
+--
+
+#### 合并两个有效数组
+1.暴力解法 将两个数组合并后重新排序
+
+```
+nums1[:] = sorted((nums1[:m] + nums2))
+```
+2.两个指针分别指向数组的最小元素，将较小的元素放入nums1中
+
+```
+tmp = nums1[:m]
+nums1[:] = []#注意这里要重新赋值，而不能只是传递引用
+i, j = 0, 0
+while i < m and j < n:
+    if tmp[i] < nums2[j]:
+        nums1.append(tmp[i])
+        i = i + 1
+    else:
+        nums1.append(nums2[j])
+        j = j + 1
+if i < m:#tmp数组中还有剩余元素
+    nums1[i+j:] = tmp[i:]
+if j < n:
+    nums1[i+j:] = nums2[j:]
+```
+3.两个指针指向数组的最大元素，将较大的元素插入到nums1末尾，无需额外的开辟数组空间
+
+```
+i, j = m-1, n-1
+ind = m+n-1
+while i >= 0 and j >= 0:
+    if nums1[i] > nums2[j]:
+        nums1[ind] = nums1[i]
+        ind, i = ind-1, i-1
+    else:
+        nums1[ind] = nums2[j]
+        ind, j = ind-1, j-1
+#如果nums1中还有元素不需要处理
+#而如果是nums2中还有元素，那么说明nums1中前面的元素需要被替换
+nums1[:j+1] = nums2[:j+1]
+return nums1
+```
+
+--
+
+
+
+
+
 
 
 

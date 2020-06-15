@@ -43,6 +43,14 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[189]旋转数组.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[189]旋转数组.py" />
+              <option name="questionId" value="189" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[1]两数之和.py">
           <value>
             <LeetcodeEditor>
@@ -99,6 +107,14 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[66]加一.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[66]加一.py" />
+              <option name="questionId" value="66" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[678]有效的括号字符串.py">
           <value>
             <LeetcodeEditor>
@@ -120,6 +136,14 @@
             <LeetcodeEditor>
               <option name="path" value="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[84]柱状图中最大的矩形.py" />
               <option name="questionId" value="84" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[88]合并两个有序数组.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[88]合并两个有序数组.py" />
+              <option name="questionId" value="88" />
             </LeetcodeEditor>
           </value>
         </entry>
