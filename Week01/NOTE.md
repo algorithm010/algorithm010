@@ -307,7 +307,7 @@ for i in range(k%len(nums)):  # 旋转k次
 
 --
 
-#### 合并两个有效数组
+#### 合并两个有序数组
 1.暴力解法 将两个数组合并后重新排序
 
 ```
@@ -350,6 +350,32 @@ return nums1
 ```
 
 --
+
+#### 合并两个有序链表
+
+```
+def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
+        if not l1:#如果l1为空，直接返回l2
+            return l2
+        if not l2:#如果l2为空，直接返回l1
+            return l1
+        rhead = ListNode(None)#用来返回最后的结果的节点
+        pre = rhead #用来添加比较过的节点
+        while l1 and l2:#循环直到某链表没有值结束,刚开始这里写的是l1.next and l2.next 返回的结果是[1,1,2,4] 
+            if l1.val <= l2.val:
+                tmp,l1 = l1,l1.next#
+                pre.next = tmp 
+                pre = tmp
+            else:
+                tmp,l2 = l2,l2.next
+                pre.next = tmp 
+                pre = tmp
+        if not l1:
+            pre.next = l2
+        if not l2:
+            pre.next = l1
+        return rhead.next
+```
 
 #### 删除排序数组中的重复数
 1.双指针 用指针记录不同元素的个数 思路比较天马行空 但是有迹可循 就是 用一个指针记录当前不同元素的个数，每次不相同时，就将这个指针更新，并且将num[i+1]赋值给指针指向的地址
