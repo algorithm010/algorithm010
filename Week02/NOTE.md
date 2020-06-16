@@ -175,13 +175,30 @@ def postorderTraversal(self, root):
     if root is None:
         return False
     stack1,stack2 = [root], []
-    stack2 = []
     while stack1:  # 找出后序遍历的逆序，存放在 stack2中
-        node = stack1.pop()
+        node = stack1.pop()#每次取出的都是右子树节点值，进而在stack2中就相当于存储的是
         if node.left:
             stack1.append(node.left)
         if node.right:
             stack1.append(node.right)
         stack2.append(node)
     return stack2[::-1]
+```
+
+#### 二叉树的层序遍历
+写着写着，才发现二叉树的层序遍历和我上面后序遍历是真的像
+```angular2html
+class Solution(object):
+    def levelTraversal(self,root):
+        if root is None:
+            return False
+        stack1, stack2 = [root], []
+        while stack1:  # 找出后序遍历的逆序，存放在 stack2中
+            node = stack1.pop(0)#抛出第一个元素
+            if node.left:
+                stack1.append(node.left)
+            if node.right:
+                stack1.append(node.right)
+            stack2.append(node.val)
+        return stack2#这里是层序遍历就不用反转了
 ```

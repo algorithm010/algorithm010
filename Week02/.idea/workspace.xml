@@ -5,8 +5,8 @@
       <change beforePath="$PROJECT_DIR$/../Week01/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Week01/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NOTE.md" beforeDir="false" afterPath="$PROJECT_DIR$/NOTE.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/levelTraversal.py" beforeDir="false" afterPath="$PROJECT_DIR$/levelTraversal.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/postorderTraversal.py" beforeDir="false" afterPath="$PROJECT_DIR$/postorderTraversal.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preorderTraversal.py" beforeDir="false" afterPath="$PROJECT_DIR$/preorderTraversal.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,7 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Week02$test.coverage" NAME="test Coverage Results" MODIFIED="1592317551652" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Week02$test.coverage" NAME="test Coverage Results" MODIFIED="1592320154754" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Week02$treeTraversal.coverage" NAME="treeTraversal Coverage Results" MODIFIED="1592316974779" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FUSProjectUsageTrigger">
@@ -29,39 +29,39 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="md" value="1" />
-          <entry key="py" value="18" />
+          <entry key="py" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Markdown" value="1" />
-          <entry key="Python" value="18" />
+          <entry key="Python" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="1" />
-          <entry key="md" value="941" />
-          <entry key="py" value="2209" />
+          <entry key="md" value="1030" />
+          <entry key="py" value="2496" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="941" />
+          <entry key="Markdown" value="1030" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="2209" />
+          <entry key="Python" value="2496" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NOTE.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="79">
-                <caret line="170" lean-forward="true" selection-start-line="170" selection-end-line="170" />
+              <first_editor relative-caret-position="326">
+                <caret line="203" column="3" lean-forward="true" selection-start-line="203" selection-start-column="3" selection-end-line="203" selection-end-column="3" />
               </first_editor>
               <second_editor />
             </state>
@@ -71,30 +71,33 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/postorderTraversal.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+            <state relative-caret-position="306">
+              <caret line="29" column="27" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="29" selection-end-column="27" />
               <folding>
-                <marker date="1592318647496" expanded="true" signature="89:94" ph="..." />
-                <marker date="1592318647496" expanded="true" signature="563:572" ph="..." />
+                <marker date="1592319922372" expanded="true" signature="89:94" ph="..." />
+                <marker date="1592319922372" expanded="true" signature="563:572" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[590]N叉树的后序遍历.py">
+        <entry file="file://$PROJECT_DIR$/levelTraversal.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-60">
-              <caret line="11" column="2" lean-forward="true" selection-end-line="34" />
+            <state relative-caret-position="285">
+              <caret line="15" column="35" lean-forward="true" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+              <folding>
+                <marker date="1592320518277" expanded="true" signature="508:509" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/NpostorderTraversal.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="27" column="9" lean-forward="true" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+            <state relative-caret-position="239">
+              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
             </state>
           </provider>
         </entry>
@@ -111,7 +114,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/preorderTraversal.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-75">
+            <state relative-caret-position="167">
               <caret line="41" column="18" lean-forward="true" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
               <folding>
                 <marker date="1592318687825" expanded="true" signature="507:512" ph="..." />
@@ -152,10 +155,11 @@
         <option value="$PROJECT_DIR$/groupAnagrams.py" />
         <option value="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[49]字母异位词分组.py" />
         <option value="$PROJECT_DIR$/treeTraversal.py" />
-        <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/postorderTraversal.py" />
         <option value="$PROJECT_DIR$/preorderTraversal.py" />
         <option value="$PROJECT_DIR$/inorderTraversal.py" />
+        <option value="$PROJECT_DIR$/postorderTraversal.py" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/levelTraversal.py" />
         <option value="$PROJECT_DIR$/NOTE.md" />
       </list>
     </option>
@@ -290,11 +294,11 @@
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" weight="0.32876712" />
+      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.32876712" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32876712" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32876712" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -356,41 +360,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[144]二叉树的前序遍历.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="13" lean-forward="true" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[面试题33]二叉搜索树的后序遍历序列.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NpostorderTraversal.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="27" column="9" lean-forward="true" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/treeTraversal.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="72" column="26" lean-forward="true" selection-start-line="72" selection-start-column="26" selection-end-line="72" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[590]N叉树的后序遍历.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-60">
-          <caret line="11" column="2" lean-forward="true" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="93" column="24" lean-forward="true" selection-start-line="93" selection-start-column="24" selection-end-line="93" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -404,23 +380,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/preorderTraversal.py">
+    <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-75">
-          <caret line="41" column="18" lean-forward="true" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
-          <folding>
-            <marker date="1592318687825" expanded="true" signature="507:512" ph="..." />
-          </folding>
+        <state relative-caret-position="234">
+          <caret line="103" lean-forward="true" selection-start-line="103" selection-end-line="103" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/postorderTraversal.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+        <state relative-caret-position="306">
+          <caret line="29" column="27" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="29" selection-end-column="27" />
           <folding>
-            <marker date="1592318647496" expanded="true" signature="89:94" ph="..." />
-            <marker date="1592318647496" expanded="true" signature="563:572" ph="..." />
+            <marker date="1592319922372" expanded="true" signature="89:94" ph="..." />
+            <marker date="1592319922372" expanded="true" signature="563:572" ph="..." />
           </folding>
         </state>
       </provider>
@@ -428,10 +401,51 @@
     <entry file="file://$PROJECT_DIR$/NOTE.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="79">
-            <caret line="170" lean-forward="true" selection-start-line="170" selection-end-line="170" />
+          <first_editor relative-caret-position="326">
+            <caret line="203" column="3" lean-forward="true" selection-start-line="203" selection-start-column="3" selection-end-line="203" selection-end-column="3" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preorderTraversal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="41" column="18" lean-forward="true" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
+          <folding>
+            <marker date="1592318687825" expanded="true" signature="507:512" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[590]N叉树的后序遍历.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-60">
+          <caret line="11" column="2" lean-forward="true" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/levelTraversal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="35" lean-forward="true" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+          <folding>
+            <marker date="1592320518277" expanded="true" signature="508:509" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[144]二叉树的前序遍历.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="13" lean-forward="true" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NpostorderTraversal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
         </state>
       </provider>
     </entry>

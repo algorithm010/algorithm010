@@ -19,15 +19,14 @@ class Solution(object):
         #用两个栈实现后序遍历的非递归实现
         if root is None:
             return False
-        stack1,stack2 = [root], []
-        stack2 = []
+        stack1, stack2 = [root], []
         while stack1:  # 找出后序遍历的逆序，存放在 stack2中
             node = stack1.pop()
             if node.left:
                 stack1.append(node.left)
             if node.right:
                 stack1.append(node.right)
-            stack2.append(node)
+            stack2.append(node.val)
         return stack2[::-1]
 
 
