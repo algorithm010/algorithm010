@@ -35,5 +35,12 @@ class Solution(object):
         :type root: Node
         :rtype: List[int]
         """
+        # 击败48%
+        if not root: return []
+        res = []
+        for child in root.children:
+            res += self.postorder(child)
+        res.append(root.val)
+        return res
 
 # leetcode submit region end(Prohibit modification and deletion)
