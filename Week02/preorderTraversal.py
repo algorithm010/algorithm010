@@ -45,7 +45,7 @@ class Solution(object):
     #         self.preorder(root.left, res)
     #     if root.right:
     #         self.preorder(root.right, res)
-    #迭代的方式 击败86%
+    #非递归方式 击败86%
     def preorderTraversal(self, root: TreeNode) -> List[int]:
         # 前序遍历的迭代实现
         if root is None: return []

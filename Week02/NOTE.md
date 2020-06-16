@@ -57,3 +57,131 @@ if tmp == set(t):#如果两个字符串的set相同进行深入判断
     return True
 return False
 ```
+
+--
+
+### 二叉树的深度优先遍历
+递归实现都比较简单，也比较容易理解，不赘述
+ 
+#### 二叉树的前序遍历 根左右
+
+1.递归实现
+```angular2html
+def preorderTraversal(self, root: TreeNode) -> List[int]:
+    res = []
+    if root:
+        self.preorder(root, res)
+    return res
+
+def preorder(self, root, res):  # 前序遍历 根左右
+    if root:
+        res.append(root.val)
+    if root.left:
+        self.preorder(root.left, res)
+    if root.right:
+        self.preorder(root.right, res)
+```
+2.非递归实现
+前序遍历的非递归实现应该是这三中遍历方式中最简单的
+首先将根节点置于stack中，在栈不为空的前提下，遍历整个二叉树
+每次先取出stack顶元素，如果栈顶元素不为None，就可以直接存入res中
+然后判断其左右子节点是否存在，并对他们进行入栈操作
+最后返回res
+
+```angular2html
+def preorderTraversal(self, root: TreeNode) -> List[int]:
+    # 前序遍历的迭代实现
+    if root is None: return []
+    stack = [root]
+    res = []
+    while stack:
+        cur = stack.pop()
+        if cur is not None:
+            res.append(cur.val)
+            # 考虑到入栈的顺序，所以先右后左
+            if cur.right is not None:
+                stack.append(cur.right)
+            if cur.left is not None:
+                stack.append(cur.left)
+    return res
+```
+
+--
+#### 二叉树的中序遍历 左根右
+1.递归实现
+```angular2html
+def inorderTraversal(self, root):
+    """
+    #中序遍历 左根右
+    :type root: TreeNode
+    :rtype: List[int]
+    """
+    res = []
+    if root:
+        self.inorder(root, res)
+    return res
+def inorder(self, root, res):
+    if root.left:
+        self.inorder(root.left, res)
+    if root:
+        res.append(root.val)
+    if root.right:
+        self.inorder(root.right, res)
+```
+
+2.非递归实现
+中序遍历的非递归实现就复杂一些了，因为每次并不是先将根节点的值输出，而是优先的找到树的最左子树
+所以要确保能一直往最左节点找同时入栈 如果已经找到最左节点，
+那么首先应当将这个元素出栈存入res中 其次应判断当前栈顶元素是是否有右孩子 将cur指向栈顶元素的右孩子
+```angular2html
+def inorderTraversal(self, root: TreeNode) -> List[int]:
+    if root is None: return []
+    res, stack = [], []
+    cur = root
+    while cur is not None or stack:
+        while cur is not None:  # 确保了能一直往左走
+            stack.append(cur)
+            cur = cur.left
+        cur = stack.pop()  # 相当于等到这次的根节点
+        res.append(cur.val)
+        cur = cur.right
+    return res
+```
+--
+
+#### 二叉树的后序遍历 左右根
+1.递归实现
+```angular2html
+def postorderTraversal(self,root):
+    res = []
+    if root is not None:
+        self.postorder(root, res)
+    return res
+def postorder(self,root,res):
+    if root.left is not None:
+        self.postorder(root.left)
+    if root is not None:
+        res.append(root.val)
+    if root.right is not None:
+        self.postorder(root.right)
+```
+2.非递归实现
+后续遍历的非递归方式应该是最难的，因为在入栈过程中还需要额外的指针标识是否已经访问过左子树的右孩子节点
+这里取巧使用两个栈，根节点不用在一个单独的栈中出入并用指针记录访问元素
+
+```angular2html
+def postorderTraversal(self, root):
+    #用两个栈实现后序遍历的非递归实现
+    if root is None:
+        return False
+    stack1,stack2 = [root], []
+    stack2 = []
+    while stack1:  # 找出后序遍历的逆序，存放在 stack2中
+        node = stack1.pop()
+        if node.left:
+            stack1.append(node.left)
+        if node.right:
+            stack1.append(node.right)
+        stack2.append(node)
+    return stack2[::-1]
+```

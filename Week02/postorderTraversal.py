@@ -15,7 +15,7 @@ class Solution(object):
     #         res.append(root.val)
     #     if root.right is not None:
     #         self.postorder(root.right)
-    def inorderTraversal(self, root):
+    def postorderTraversal(self, root):
         #用两个栈实现后序遍历的非递归实现
         if root is None:
             return False
