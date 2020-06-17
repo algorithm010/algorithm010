@@ -55,10 +55,6 @@ class Solution(object):
     #     for child in root.children:
     #         self.Npreorder(child, res)
 
-
-
-
-
     #击败69%
     def traversal(self,root):
         if not root: return []

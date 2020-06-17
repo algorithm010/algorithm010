@@ -202,3 +202,45 @@ class Solution(object):
             stack2.append(node.val)
         return stack2#这里是层序遍历就不用反转了
 ```
+
+
+#### N叉树的层序遍历
+刚开始是这么写的，看起来算法逻辑没什么问题，但是这里我相当于是将cur当做一个list在做
+而实际上cur只是一个Node，哪怕它是root.children它也是个Node，所以没法将其进行迭代
+```angular2html
+def levelOrder(self, root: 'Node') -> List[List[int]]:
+        if root is None: return []
+        quene,res = [root],[]
+        while quene:
+            cur = stack1.pop()
+            if cur is not None:
+                print(type(cur))#cur is Node
+                tmp = []
+                for item in cur:
+                    tmp.append(item.val)
+                res.append(tmp)
+                for child in cur.children:
+                    stack1.append(child)
+        return res
+```
+改进之后，这里 实际上quene每次存储的都是每一层的所有节点，
+每次都将quene所有元素记录到tmp中，将所有节点合并为list之后存入res
+同时，在加入的过程中，用tmp_quene记录下一层的节点值，
+在遍历完上层节点后，将下层节点赋给quene
+```angular2html
+def levelOrder(self,root):
+    #击败55%
+    if root is None: return []
+    quene,res = [root],[]
+    while quene:
+    #将当前层的所有元素出队列，记录其值存入res中，由于输出格式的限制，要用tmp先存放
+    #并且将其孩子全部记录在下一个quene中，这样保证了上层节点全部被加入到res中，而不会发生交替现象
+        tmp, tmp_quene = [], []#这个tmp_quene是为了暂存下一层的所有节点
+        for node in quene:
+            tmp.append(node.val)
+            for child in node.children:
+                tmp_quene.append(child)
+        res.append(tmp)
+        quene = tmp_quene
+    return res
+```
