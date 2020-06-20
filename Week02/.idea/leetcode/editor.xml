@@ -3,6 +3,22 @@
   <component name="LeetcodeEditor">
     <option name="projectConfig">
       <map>
+        <entry key="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[10]正则表达式匹配.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[10]正则表达式匹配.py" />
+              <option name="questionId" value="10" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[125]验证回文串.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[125]验证回文串.py" />
+              <option name="questionId" value="125" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[144]二叉树的前序遍历.py">
           <value>
             <LeetcodeEditor>
@@ -48,6 +64,14 @@
             <LeetcodeEditor>
               <option name="path" value="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[面试题33]二叉搜索树的后序遍历序列.py" />
               <option name="questionId" value="100315" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[面试题40]最小的k个数.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[面试题40]最小的k个数.py" />
+              <option name="questionId" value="100301" />
             </LeetcodeEditor>
           </value>
         </entry>
