@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="32d5cccf-a236-4a37-9b64-978638486f4c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../Week01/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Week01/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/leetcode/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/leetcode/editor.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/isPalindrome.py" beforeDir="false" afterPath="$PROJECT_DIR$/每日一题6_19_验证是否回文串.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/每日一题6_20_正则表达式匹配.py" beforeDir="false" afterPath="$PROJECT_DIR$/每日一题6_20_正则表达式匹配.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -89,8 +85,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/每日一题6_19_验证是否回文串.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="24" column="20" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="20" />
+            <state relative-caret-position="265">
+              <caret line="26" column="20" lean-forward="true" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -401,6 +397,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49863014" visible="true" weight="0.19709209" />
       <window_info id="Structure" order="1" sideWeight="0.50136983" side_tool="true" weight="0.24959612" />
@@ -673,8 +670,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/每日一题6_19_验证是否回文串.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="24" column="20" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="20" />
+        <state relative-caret-position="265">
+          <caret line="26" column="20" lean-forward="true" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
         </state>
       </provider>
     </entry>
