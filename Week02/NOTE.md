@@ -3,11 +3,11 @@
 [TOC]
 
 #### 有效的异位词
-1.直接对两个字符串进行排序，判断排序后的结果是否一致
+1.直接对两个字符串进行排序，判断排序后的结果是否一致  
 ```
 return sorted(s) == sorted(t)
 ```
-2.根据两个字符串构建hash表，判断两个hash表是否一致
+2.根据两个字符串构建hash表，判断两个hash表是否一致  
 ```angular2html
 dic1, dic2 = {}, {}
 for item in s:
@@ -17,7 +17,7 @@ for item in t:
 return dic1 == dic2
 
 ```
-3.只需要使用一个hash表，前一次遍历增加值，后一次遍历减少值
+3.只需要使用一个hash表，前一次遍历增加值，后一次遍历减少值  
 最后判断hash表中的值是否为0
 ```angular2html
 if len(s) != len(t): return False
@@ -61,8 +61,63 @@ return False
 ```
 
 #### 异位词分组
-对于给定包含多个字符串的列表，将其按照是否异位词分组输出
+对于给定包含多个字符串的列表，将其按照是否异位词分组输出  
+1.由于异位词都是由相同字母集组成的，可以在遍历列表时，根据其字母排序是否一致，作为异位词分组的根据  
+具体的 根据字母排序是否一致，构建hash表，以字母排序作为key(当然也可以使用字母的tuple序)，以原字符串作为键  
+由于涉及到排序 所以时间复杂度为O(NKlogK),空间复杂度为O(NK)
+```angular2html
+dic = {}
+for item in strs:
+    # key = tuple(sorted(item))#字母的键也可以用字母排序对应的tuple
+    key = ''.join(sorted(item))#sorted返回的是list,不能作为dict的键
+    if key in dic:
+        dic[key].append(item)
+    else:
+        dic[key] = [item]
+# return [x for x in dic.values()]#击败94%
+return [dic[x] for x in dic]#击败97%
+```
+这种写法很直观，但是判断当前字符是否存在hash表中，有简简洁写法  
+dict.get()获取不到时，返回[]   
+获取到时 + [item]可以直接在原list中拼接  
+```angular2html
+dic = {}
+for item in strs:
+    key = ''.join((sorted(item)))
+    dic[key] = dic.get(key, []) + [item]
+return [dic[x] for x in dic]
+```
+当然也可以使用defaultdict实现
+```angular2html
+dic = collections.defaultdict(list)
+for item in strs:
+    dic[tuple(sorted(item))].append(item)
+return [dic[item] for item in dic]
+```
 
+2.根据字符串中字符出现的次数作为hash表的键  
+对于每次遍历到的字符串，都需要维护一个长度为26的list，并要将其转化为tuple  
+时间复杂度是O(NK),空间复杂度为O(NK)
+```angular2html
+dic = {}
+for item in strs:
+    count = [0] * 26
+    for char in item:
+        count[ord(char) - ord('a')] += 1
+    # res[tuple(count)].append(item)
+    dic[tuple(count)] = dic.get(tuple(count),[]) + [item]
+return [dic[x] for x in dic]
+```
+对应的defaultdict实现如下
+```angular2html
+dic = collections.defaultdict(list)
+for item in strs:
+    count = [0] * 26
+    for char in item:
+        count[ord(char) - ord('a')] += 1
+    dic[tuple(count)].append(item)
+return [dic[x] for x in dic]
+```
 
 ### 二叉树的深度优先遍历
 递归实现都比较简单，也比较容易理解，不赘述
@@ -86,10 +141,10 @@ def preorder(self, root, res):  # 前序遍历 根左右
         self.preorder(root.right, res)
 ```
 2.非递归实现
-前序遍历的非递归实现应该是这三中遍历方式中最简单的
-首先将根节点置于stack中，在栈不为空的前提下，遍历整个二叉树
-每次先取出stack顶元素，如果栈顶元素不为None，就可以直接存入res中
-然后判断其左右子节点是否存在，并对他们进行入栈操作
+前序遍历的非递归实现应该是这三中遍历方式中最简单的  
+首先将根节点置于stack中，在栈不为空的前提下，遍历整个二叉树  
+每次先取出stack顶元素，如果栈顶元素不为None，就可以直接存入res中  
+然后判断其左右子节点是否存在，并对他们进行入栈操作  
 最后返回res
 
 ```angular2html
@@ -133,9 +188,9 @@ def inorder(self, root, res):
 ```
 
 2.非递归实现
-中序遍历的非递归实现就复杂一些了，因为每次并不是先将根节点的值输出，而是优先的找到树的最左子树
-所以要确保能一直往最左节点找 同时入栈 如果已经找到最左节点，
-那么首先应当将这个元素出栈存入res中 其次应判断当前栈顶元素是是否有右孩子 将cur指向栈顶元素的右孩子
+中序遍历的非递归实现就复杂一些了，因为每次并不是先将根节点的值输出，而是优先的找到树的最左子树  
+所以要确保能一直往最左节点找 同时入栈 如果已经找到最左节点，  
+那么首先应当将这个元素出栈存入res中 其次应判断当前栈顶元素是是否有右孩子 将cur指向栈顶元素的右孩子  
 ```angular2html
 def inorderTraversal(self, root: TreeNode) -> List[int]:
     if root is None: return []
@@ -168,8 +223,8 @@ def postorder(self,root,res):
         self.postorder(root.right)
 ```
 2.非递归实现
-后续遍历的非递归方式应该是最难的，因为在入栈过程中还需要额外的指针标识是否已经访问过左子树的右孩子节点
-这里取巧使用两个栈，根节点不用在一个单独的栈中出入并用指针记录访问元素
+后续遍历的非递归方式应该是最难的，因为在入栈过程中还需要额外的指针标识是否已经访问过左子树的右孩子节点  
+这里取巧使用两个栈，根节点不用在一个单独的栈中出入并用指针记录访问元素  
 
 ```angular2html
 def postorderTraversal(self, root):
@@ -207,8 +262,8 @@ class Solution(object):
 
 
 #### N叉树的层序遍历
-刚开始是这么写的，看起来算法逻辑没什么问题，但是这里我相当于是将cur当做一个list在做
-而实际上cur只是一个Node，哪怕它是root.children它也是个Node，所以没法将其进行迭代
+刚开始是这么写的，看起来算法逻辑没什么问题，但是这里我相当于是将cur当做一个list在做  
+而实际上cur只是一个Node，哪怕它是root.children它也是个Node，所以没法将其进行迭代  
 ```angular2html
 def levelOrder(self, root: 'Node') -> List[List[int]]:
         if root is None: return []
@@ -226,9 +281,9 @@ def levelOrder(self, root: 'Node') -> List[List[int]]:
                     stack1.append(child)
         return res
 ```
-改进之后，这里 实际上quene每次存储的都是每一层的所有节点，
-每次都将quene所有元素记录到tmp中，将所有节点合并为list之后存入res
-同时，在加入的过程中，用tmp_quene记录下一层的节点值，
+改进之后，这里 实际上quene每次存储的都是每一层的所有节点，  
+每次都将quene所有元素记录到tmp中，将所有节点合并为list之后存入res  
+同时，在加入的过程中，用tmp_quene记录下一层的节点值，  
 在遍历完上层节点后，将下层节点赋给quene
 ```angular2html
 def levelOrder(self,root):
@@ -300,18 +355,18 @@ def getLeastNumbers(self, arr: List[int], k: int) -> List[int]:
 ```
 
 #### 堆排序
-堆排序的过程主要包括 建堆以及对每一个小三角形进行堆化处理，使之满足小根堆或者大根堆的情形
-建堆是指，对于给定的元素，从下往上考虑（从最后一个非叶节点开始）使之满足nums_i>(nums_2xi+1,nums_2i+2)
-然后对于每一个元素 逆序遍历时 与堆的根节点进行调换 对树进行从上往下的堆化比较过程
-对于有节点值交换的情形 进一步考量它的下一层是否符合小根堆或大根堆的条件
-建堆之后 堆顶的元素应该是最大的(大根堆)，此时将它与末尾元素调换就会使得最大元素到最后位置，对现今的堆顶元素进行堆化
-这个过程就完成了对一个元素的排序，目前堆中的最大元素已经到了末尾，下一次进行调整时就无须再处理此元素
+堆排序的过程主要包括 建堆以及对每一个小三角形进行堆化处理，使之满足小根堆或者大根堆的情形  
+建堆是指，对于给定的元素，从下往上考虑（从最后一个非叶节点开始）使之满足nums_i>(nums_2xi+1,nums_2i+2)  
+然后对于每一个元素 逆序遍历时 与堆的根节点进行调换 对树进行从上往下的堆化比较过程  
+对于有节点值交换的情形 进一步考量它的下一层是否符合小根堆或大根堆的条件  
+建堆之后 堆顶的元素应该是最大的(大根堆)，此时将它与末尾元素调换就会使得最大元素到最后位置，对现今的堆顶元素进行堆化  
+这个过程就完成了对一个元素的排序，目前堆中的最大元素已经到了末尾，下一次进行调整时就无须再处理此元素  
 ```angular2html
-'''
-时间复杂度为NlogN，logN为建立大根堆/小根堆的时间复杂度，
-heapify的时间复杂度是O(logN)的因为，最坏情况下，每一层都需要判断
-N为对已经构成的堆排序反向遍历的时间复杂度
-'''
+
+#时间复杂度为NlogN，logN为建立大根堆/小根堆的时间复杂度，
+#heapify的时间复杂度是O(logN)的因为，最坏情况下，每一层都需要判断
+#N为对已经构成的堆排序反向遍历的时间复杂度
+
 def heapify(self, nums, size, i):#heapify过程就是递归考量三角是否满足条件
     max_index = i
     left, right = 2*i+1,2*i+2
@@ -336,4 +391,102 @@ def heap_sort(self,nums):
 ```
 
 
-#### 
+#### 判断是否是丑数
+如果一个数是丑数那肯定满足这种定义num = 2^i*3^j*5^k
+```angular2html
+if num == 0: return False
+while num % 5 == 0: num /= 5
+while num % 3 == 0: num /= 3
+while num % 2 == 0: num /= 2
+return num == 1#击败98%，省去了迭代的过程
+```
+当然也可以简化为如下，但是就要多一部分迭代过程
+```angular2html
+for item in [2,3,5]:
+    while num%item==0:#依次除尽2，3，5
+        num = num/item
+# return True if num==1 else False #击败50%
+# return num==1#击败87%
+```
+
+#### 求第n个丑数
+动态规划的题，解法分 动态转移方程和动态转移矩阵
+后面整理一套解法
+```angular2html
+# 1、2、3、5、4、6、8、9、10
+if n==0:
+    return 0
+res = [1]*n
+p2,p3,p5 = 0,0,0#指向三个队列的指针
+for i in range(1,n):
+    res[i] = min(res[p2]*2,res[p3]*3,res[p5]*5)
+    if res[i] == res[p2]*2: p2 = p2+1
+    if res[i] == res[p3]*3: p3 = p3+1
+    if res[i] == res[p5]*5: p5 = p5+1
+return res[-1]
+```
+
+#### 验证字符串是否是回文串
+1.翻转字符串 看是否相同 击败81%
+```angular2html
+tmp = "".join(char.lower() for char in s if ch.isalnum())
+return tmp == tmp[::-1]
+```
+2.双指针 击败61%
+```angular2html
+tmp = "".join(char.lower() for char in s if ch.isalnum())
+n = len(tmp)
+left, right = 0, n - 1
+while left < right:
+    if tmp[left] != tmp[right]:
+        return False
+    left, right = left + 1, right - 1
+return True
+```
+
+#### 正则表达式匹配
+1.递归解法  
+是超出时间限制的，时间复杂度是O(3^N)
+```angular2html
+def isMatch(self, s: str, pattern: str) -> bool:
+    # 特殊情况处理
+    if len(s) == 0 and len(pattern) == 0: return True
+    if len(s) > 0 and len(pattern) == 0: return False
+    # 如果pattern形如 a*####，检查这个*能匹配几次
+    if len(pattern) > 1 and pattern[1] == '*':#击败80%
+        # s和pattern首字母相同
+        if len(s) > 0 and (pattern[0] == s[0] or pattern[0] == '.'):
+            # s能和pattern匹配的情形
+            # 1.*匹配0次，则需要递归的对s和pattern[2:]进行匹配
+            # 2.*匹配1次，需要递归的对s[1:]和pattern[2:]进行匹配
+            # 3.*匹配n次，需要递归的对s[1:]和pattern进行匹配
+            return self.isMatch(s, pattern[2:]) or self.isMatch(s, pattern[2:]) or self.isMatch(s[1:], pattern)
+        else:  # 如果首字母不相同，就相当于*匹配0次，继续匹配s和pettern[2:]
+            return self.isMatch(s, pattern[2:])
+    # pattern以.开头
+    if len(s) > 0 and (pattern[0] == '.' or s[0] == pattern[0]):
+        return self.isMatch(s[1:], pattern[1:])
+    return False
+```
+python中有装饰器优化迭代过程@lru_cache  
+所以在函数前使用装饰器即可通过
+```angular2html
+@lru_cache
+def isMatch(self, s: str, pattern: str) -> bool:
+    pass
+```
+上面的代码比较复杂，可以优化代码
+```angular2html
+if not pattern: return not s#这句话真的优秀
+match_first = bool(s) and (pattern[0] == s[0] or pattern[0] == '.')
+if len(pattern) > 1 and pattern[1] == '*':
+    return (self.isMatch(s, pattern[2:]) or match_first and self.isMatch(s[1:], pattern))
+else:
+    return match_first and self.isMatch(s[1:], pattern[1:])
+```
+2.动态规划
+```angular2html
+pass
+```
+
+
