@@ -11,6 +11,7 @@
 class HeapSort():
     '''
     时间复杂度为NlogN，logN为建立大根堆/小根堆的时间复杂度，
+    heapify的时间复杂度是O(logN)的因为，最坏情况下，每一层都需要判断
     N为对已经构成的堆排序反向遍历的时间复杂度
     '''
     def heapify(self, nums, size, i):#heapify过程就是递归考量三角是否满足条件
