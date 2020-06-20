@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 # Author : Ray
 # Data : 2020/6/19 8:41 PM
-from  typing import List
+from typing import List
 class Solution:
     # : List[int], k: int
     def topKFrequent(self, nums) -> List[int]:
