@@ -1,5 +1,7 @@
 学习笔记
 
+[TOC]
+
 #### 有效的异位词
 1.直接对两个字符串进行排序，判断排序后的结果是否一致
 ```
@@ -58,7 +60,9 @@ if tmp == set(t):#如果两个字符串的set相同进行深入判断
 return False
 ```
 
---
+#### 异位词分组
+对于给定包含多个字符串的列表，将其按照是否异位词分组输出
+
 
 ### 二叉树的深度优先遍历
 递归实现都比较简单，也比较容易理解，不赘述
@@ -106,7 +110,6 @@ def preorderTraversal(self, root: TreeNode) -> List[int]:
     return res
 ```
 
---
 #### 二叉树的中序遍历 左根右
 1.递归实现
 ```angular2html
@@ -131,7 +134,7 @@ def inorder(self, root, res):
 
 2.非递归实现
 中序遍历的非递归实现就复杂一些了，因为每次并不是先将根节点的值输出，而是优先的找到树的最左子树
-所以要确保能一直往最左节点找同时入栈 如果已经找到最左节点，
+所以要确保能一直往最左节点找 同时入栈 如果已经找到最左节点，
 那么首先应当将这个元素出栈存入res中 其次应判断当前栈顶元素是是否有右孩子 将cur指向栈顶元素的右孩子
 ```angular2html
 def inorderTraversal(self, root: TreeNode) -> List[int]:
@@ -147,7 +150,6 @@ def inorderTraversal(self, root: TreeNode) -> List[int]:
         cur = cur.right
     return res
 ```
---
 
 #### 二叉树的后序遍历 左右根
 1.递归实现
@@ -246,8 +248,6 @@ def levelOrder(self,root):
     return res
 ```
 
-
---
 #### 数组中最小的k个数
 1.暴力解法 对数组进行排序，返回前k个
 ```angular2html
@@ -298,3 +298,42 @@ def getLeastNumbers(self, arr: List[int], k: int) -> List[int]:
             left = pivot + 1  # 不 +1 会陷入死循环
     return arr[:k]
 ```
+
+#### 堆排序
+堆排序的过程主要包括 建堆以及对每一个小三角形进行堆化处理，使之满足小根堆或者大根堆的情形
+建堆是指，对于给定的元素，从下往上考虑（从最后一个非叶节点开始）使之满足nums_i>(nums_2xi+1,nums_2i+2)
+然后对于每一个元素 逆序遍历时 与堆的根节点进行调换 对树进行从上往下的堆化比较过程
+对于有节点值交换的情形 进一步考量它的下一层是否符合小根堆或大根堆的条件
+建堆之后 堆顶的元素应该是最大的(大根堆)，此时将它与末尾元素调换就会使得最大元素到最后位置，对现今的堆顶元素进行堆化
+这个过程就完成了对一个元素的排序，目前堆中的最大元素已经到了末尾，下一次进行调整时就无须再处理此元素
+```angular2html
+'''
+时间复杂度为NlogN，logN为建立大根堆/小根堆的时间复杂度，
+heapify的时间复杂度是O(logN)的因为，最坏情况下，每一层都需要判断
+N为对已经构成的堆排序反向遍历的时间复杂度
+'''
+def heapify(self, nums, size, i):#heapify过程就是递归考量三角是否满足条件
+    max_index = i
+    left, right = 2*i+1,2*i+2
+    if left < size and nums[left] > nums[max_index]:
+        max_index = left
+    if right < size and nums[right] > nums[max_index]:
+        max_index = right
+    if max_index != i:#存在交换的情形
+        nums[i], nums[max_index] = nums[max_index], nums[i]
+        self.heapify(nums, size, max_index)
+
+def heap_sort(self,nums):
+    size = len(nums)
+    for i in range(size//2-1,-1,-1):
+        self.heapify(nums,size,i)
+    print(nums)
+
+    for i in range(size-1,0,-1):#排序需要对整个堆进行调整
+        nums[i], nums[0] = nums[0], nums[i]#交换末尾元素与堆顶元素
+        self.heapify(nums,i,0)#交换之后，要确定这个堆是否合乎条件，进行堆化，
+        #要注意到，每次堆化时，就已经把一个元素排好了，放在最末尾了，以后就不许要再考虑这个元素了
+```
+
+
+#### 
