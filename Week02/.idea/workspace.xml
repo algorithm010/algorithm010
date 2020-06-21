@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="32d5cccf-a236-4a37-9b64-978638486f4c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/只出现一次的数字.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Week01/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Week01/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NOTE.md" beforeDir="false" afterPath="$PROJECT_DIR$/NOTE.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/字母异位词分组.py" beforeDir="false" afterPath="$PROJECT_DIR$/字母异位词分组.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,6 +15,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/Week02$test.coverage" NAME="test Coverage Results" MODIFIED="1592320154754" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Week02$heap_sort.coverage" NAME="heap_sort Coverage Results" MODIFIED="1592668210828" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Week02$.coverage" NAME="只出现一次的数字 Coverage Results" MODIFIED="1592706646280" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Week02$treeTraversal.coverage" NAME="treeTraversal Coverage Results" MODIFIED="1592316974779" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Week02$topKFrequent.coverage" NAME="topKFrequent Coverage Results" MODIFIED="1592571818430" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Week02$isUglyNumber.coverage" NAME="isUglyNumber Coverage Results" MODIFIED="1592568761380" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -35,13 +35,13 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="md" value="3" />
-          <entry key="py" value="49" />
+          <entry key="py" value="50" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Markdown" value="3" />
-          <entry key="Python" value="49" />
+          <entry key="Python" value="50" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -49,7 +49,7 @@
           <entry key="Python Console" value="366" />
           <entry key="dummy" value="262" />
           <entry key="md" value="3075" />
-          <entry key="py" value="5484" />
+          <entry key="py" value="5709" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -57,21 +57,33 @@
           <entry key="HTML" value="4" />
           <entry key="Markdown" value="3071" />
           <entry key="PLAIN_TEXT" value="262" />
-          <entry key="Python" value="5850" />
+          <entry key="Python" value="6075" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NOTE.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="367">
-                <caret line="488" column="4" selection-start-line="488" selection-start-column="4" selection-end-line="488" selection-end-column="4" />
+              <first_editor relative-caret-position="139">
+                <caret line="476" column="3" selection-start-line="476" selection-end-line="476" selection-end-column="3" />
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/只出现一次的数字.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="7" column="49" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
+              <folding>
+                <marker date="1592706789197" expanded="true" signature="158:167" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -89,7 +101,7 @@
         <entry file="file://$PROJECT_DIR$/每日一题6_19_判断是否丑数.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="228">
-              <caret line="12" column="8" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="16" selection-end-column="38" />
+              <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="16" selection-end-column="38" />
               <folding>
                 <marker date="1592569374228" expanded="true" signature="121:130" ph="..." />
               </folding>
@@ -132,7 +144,7 @@
         <entry file="file://$PROJECT_DIR$/堆排序.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="168">
-              <caret line="27" column="29" lean-forward="true" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+              <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -176,6 +188,7 @@
         <option value="$PROJECT_DIR$/每日一题6_19_判断是否丑数.py" />
         <option value="$PROJECT_DIR$/每日一题6_20_正则表达式匹配.py" />
         <option value="$PROJECT_DIR$/NOTE.md" />
+        <option value="$PROJECT_DIR$/只出现一次的数字.py" />
       </list>
     </option>
   </component>
@@ -229,7 +242,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.heap_sort">
+  <component name="RunManager" selected="Python.只出现一次的数字">
+    <configuration name="只出现一次的数字" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Week02" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/每日一题6_21_只出现一次的数字.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="getLeastNumbers" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Week02" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -296,28 +331,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Week02" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="topKFrequent" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Week02" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -341,19 +354,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.test" />
       <item itemvalue="Python.heap_sort" />
       <item itemvalue="Python.getLeastNumbers" />
       <item itemvalue="Python.isUglyNumber" />
       <item itemvalue="Python.topKFrequent" />
+      <item itemvalue="Python.只出现一次的数字" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.只出现一次的数字" />
         <item itemvalue="Python.heap_sort" />
         <item itemvalue="Python.topKFrequent" />
         <item itemvalue="Python.isUglyNumber" />
         <item itemvalue="Python.getLeastNumbers" />
-        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -374,12 +387,12 @@
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49863014" visible="true" weight="0.20193861" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49863014" visible="true" weight="0.20193861" />
       <window_info id="Structure" order="1" sideWeight="0.50136983" side_tool="true" weight="0.24959612" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32876712" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32876712" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32876712" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -389,7 +402,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32876712" />
-      <window_info anchor="bottom" id="Python Console" order="12" visible="true" weight="0.34931508" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.34931508" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -397,30 +410,6 @@
       <window_info anchor="right" id="SciView" order="4" />
       <window_info anchor="right" id="Database" order="5" />
     </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49863014" visible="true" weight="0.19709209" />
-      <window_info id="Structure" order="1" sideWeight="0.50136983" side_tool="true" weight="0.24959612" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32876712" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.047945205" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32876712" />
-      <window_info anchor="bottom" id="Python Console" order="12" weight="0.35036495" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="leetcode" order="3" side_tool="true" weight="0.18416801" />
-      <window_info anchor="right" id="SciView" order="4" />
-      <window_info anchor="right" id="Database" order="5" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -580,7 +569,7 @@
     <entry file="file://$PROJECT_DIR$/堆排序.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
-          <caret line="27" column="29" lean-forward="true" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+          <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -601,7 +590,7 @@
     <entry file="file://$PROJECT_DIR$/每日一题6_19_判断是否丑数.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
-          <caret line="12" column="8" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="16" selection-end-column="38" />
+          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="16" selection-end-column="38" />
           <folding>
             <marker date="1592569374228" expanded="true" signature="121:130" ph="..." />
           </folding>
@@ -643,10 +632,20 @@
     <entry file="file://$PROJECT_DIR$/NOTE.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="367">
-            <caret line="488" column="4" selection-start-line="488" selection-start-column="4" selection-end-line="488" selection-end-column="4" />
+          <first_editor relative-caret-position="139">
+            <caret line="476" column="3" selection-start-line="476" selection-end-line="476" selection-end-column="3" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/只出现一次的数字.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="49" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
+          <folding>
+            <marker date="1592706789197" expanded="true" signature="158:167" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
