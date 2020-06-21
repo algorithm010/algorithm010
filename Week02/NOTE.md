@@ -624,3 +624,33 @@ for num in nums:
         x ^= num
 return [x, tmp^x]#tmp是两个数的异或值，一个值已经找到了
 ```
+
+#### 二叉树的最大路径和
+比较自然的想法是递归，计算上层节点的最大路径时，只需要考虑左右子树最大值  
+路径： 左->中->再上  
+      左->中  
+      左->中->右    
+```angular2html
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
+#路径被定义为一条从树中任意节点出发，达到任意节点的序列。该路径至少包含一个节点，且不一定经过根节点。
+class Solution:
+    def __init__(self):
+        self.maxpath_sum = float("-inf")#节点值可能为负值
+
+    def maxPathSum(self, root: TreeNode) -> int:
+        self.maxGain(root)
+        return self.maxpath_sum
+
+    def maxGain(self,node):
+        if not node: return 0
+        left_gain = max(self.maxGain(node.left),0)#将空值、负值过滤掉了
+        right_gain = max(self.maxGain(node.right),0)
+        path_sum = node.val + left_gain + right_gain #左根右
+        self.maxpath_sum = max(path_sum, self.maxpath_sum)#更新self.maxpath_sum，过滤负值
+        return node.val + max(left_gain, right_gain)#对于更上层的元素，它的最大路径值，只可能向左或向右到达此节点，所以取最大值
+```
