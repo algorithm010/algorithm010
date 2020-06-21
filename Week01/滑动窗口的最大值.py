@@ -62,31 +62,40 @@ from collections import deque
 class SolutionII:
     def maxSlidingWindow(self, nums: 'List[int]', k: 'int') -> 'List[int]':
         #双端队列 击败30%
-        size = len(nums)
-        if size == 0 or k == 0:
-            return []
-        if k == 1:
-            return nums
-        def ope_deque(i):
-            if deq and deq[0] == i-k: # [7,2,4],2 滑动过程中，将window的最左元素出掉
-                deq.popleft()
-            while deq and nums[i] > nums[deq[-1]]:# 整体上滑动的过程还是一个先进先出队列的形式
-                deq.pop()
-        max_index = 0
-        deq = deque()
-        res = []
-        for i in range(k):
-            ope_deque(i)
-            deq.append(i)
-            if nums[i] > nums[max_index]:
-                max_index = i
-        res.append(nums[max_index])
-
-        for i in range(k,size):
-            ope_deque(i)
-            deq.append(i)
-            res.append(nums[deq[0]])#窗口开始滑动，要记录此时窗口的最大值
-        return res
+        # size = len(nums)
+        # if size == 0 or k == 0: return []
+        # if k == 1: return nums
+        # def ope_deque(i):
+        #     if deq and deq[0] == i-k: # [7,2,4],2 滑动过程中，将window的最左元素出掉
+        #         deq.popleft()
+        #     while deq and nums[i] > nums[deq[-1]]:# 整体上滑动的过程还是一个先进先出队列的形式
+        #         deq.pop()
+        # max_index = 0
+        # deq = deque()
+        # res = []
+        # for i in range(k):
+        #     ope_deque(i)
+        #     deq.append(i)
+        #     if nums[i] > nums[max_index]:
+        #         max_index = i
+        # res.append(nums[max_index])#先将前k个元素中的最大值加入res中
+        #
+        # for i in range(k,size):
+        #     ope_deque(i)
+        #     deq.append(i)
+        #     res.append(nums[deq[0]])#窗口开始滑动，要记录此时窗口的最大值
+        # return res
+        #击败63%
+        if not k: return []
+        my_deque, res = deque(), []
+        for ind, num in enumerate(nums):
+            while my_deque and nums[ind] > nums[my_deque[-1]]:#将先入队的较小元素，出队
+                my_deque.pop()
+            my_deque.append(ind)
+            if my_deque[0] == ind - k:  # 窗口滑动
+                my_deque.popleft()
+            res.append(nums[my_deque[0]])
+        return res[k - 1:]
 # leetcode submit region end(Prohibit modification and deletion)
 
 

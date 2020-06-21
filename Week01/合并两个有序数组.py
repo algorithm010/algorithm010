@@ -55,7 +55,7 @@ class Solution(object):
         #时间复杂度是O(m+n),空间开销是常数级
         i, j = m-1, n-1
         ind = m+n-1
-        while i >= 0 and j >= 0:
+        while i >= 0 and j >= 0:#从后往前比较，将较大的值存入nums1末尾中
             if nums1[i] > nums2[j]:
                 nums1[ind] = nums1[i]
                 ind, i = ind-1, i-1
