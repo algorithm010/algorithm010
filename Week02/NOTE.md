@@ -514,6 +514,11 @@ return res
 ```
 
 #### 只出现一次的数字II
+1. 数学计算
+```angular2html
+tmp = set(nums)
+return (3*sum(tmp) - sum(nums))//2
+```
 给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现了三次。找出那个只出现了一次的元素。  
 1.python解法 使用count函数 但是count函数本身的时间复杂度就是O(N)的，导致算法时间复杂度是O(N^2)
 ```angular2html
