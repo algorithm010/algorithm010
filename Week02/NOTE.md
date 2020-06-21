@@ -490,3 +490,132 @@ pass
 ```
 
 
+#### 只出现一次的数字 时间复杂度为O(N)，空间复杂度为O(N)
+除一个数外，所有元素都出现了两次，求这个只出现一次的元素
+1.两次hash表 遍历list，用hash表统计每个值出现的次数，根据出现次数返回key
+```angular2html
+# 1.hash表记录出现次数，以num为key，以出现次数为value 击败42%
+dic = {}
+for num in nums:
+    dic[num] = dic.get(num,0)+1
+for key, value in dic.items():
+    if value == 1:
+        return key
+```
+2.题目要求用常数级的空间复杂度实现，则不能用hash表实现
+```angular2html
+#位运算，击败97%
+# 由于每个元素都出现了两次，根据异或运算可以消去这两个元素
+#最后保留的就是带求值key和初始值1的异或
+res = 0
+for num in nums:
+    res ^= num
+return res
+```
+
+#### 只出现一次的数字II
+给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现了三次。找出那个只出现了一次的元素。  
+1.python解法 使用count函数 但是count函数本身的时间复杂度就是O(N)的，导致算法时间复杂度是O(N^2)
+```angular2html
+for num in nums:
+    if nums.count(num)==1:
+        return num
+```
+对应的优化是采用collections中的Counter模块
+```angular2html
+from collections import Counter
+dic = Counter(nums)
+for key in dic.keys():
+    if dic[key] == 1:
+        return key
+```
+2.hash表法 通用解
+```angular2html
+dic = {}
+for num in nums:
+    dic[num] = dic.get(num,0)+1
+for key, value in dic.items():
+    if value == 1:
+        return key
+```
+3. 借助逻辑电路，构造这样的逻辑门状态  
+1x1x1->1 1->0，这个数可以出现0次、1次、2次，需要两位来表示其状态  
+构造真值表 写出逻辑表达式 并化简  
+参考连接[电路逻辑通俗解](https://leetcode-cn.com/problems/single-number-ii/solution/luo-ji-dian-lu-jiao-du-xiang-xi-fen-xi-gai-ti-si-l/)
+```angular2html
+x,y = 0,0
+for z in nums:
+    tmp = ~x&(y^z)
+    x = (x&~y&~z)|(~x&y&z)
+    y = tmp
+return y
+```
+根据两个表达式同构的性质，可以优化更新x的逻辑表达式
+```angular2html
+x, y = 0, 0
+for num in nums:#num means input
+    y = ~x & (y^num)
+    x = ~y & (x^num)
+return y
+```
+
+#### 只出现一次的数字III
+1.使用Counter
+```angular2html
+from collections import Counter #{'num':count}
+dic = Counter(nums)
+return [key for key in dic if dic[key]==1 ]
+```
+给定一个整数数组 nums，其中恰好有两个元素只出现一次，其余所有元素均出现两次。 找出只出现一次的那两个元素。  
+2.hash表法
+```angular2html
+dic,res = {}, []
+for num in nums:
+    dic[num] = dic.get(num,0) + 1
+for key,value in dic.items():
+    if value == 1:
+        res.append(key)
+return res
+```
+3.接上一题的思路，如果对这些元素进行异或，得到的结果就是待求元素的异或值，如何从结果中分离这两个元素呢？  
+异或得到的结果不能直接分离出待求元素，但是我们可以根据这个异或值的第一个1将原数组分类，  
+由于其余元素都是出现两次的，所以对这两个数组分别求异或即可得到结果。
+```angular2html
+tmp = 0
+for num in nums:
+    tmp ^= num
+#找到第一位不相同的数字
+count = 0
+while tmp&1 !=1:
+    tmp>>=1#右移1位
+    count += 1
+tmp1,tmp2 = [],[]
+for num in nums:
+    if num>>count & 1 == 0:#将该数向右移动count位
+        tmp1.append(num)
+    else:
+        tmp2.append(num)
+res = []
+t1,t2 = 0,0
+for num in tmp1:
+    t1 ^= num
+res.append(t1)
+for num in tmp2:
+    t2^= num
+res.append(t2)
+return res
+
+```
+上面的方式可以优化，其一，找第一位不同，第二，不需要用数组存放元素，直接根据此位是否为1，直接进行计算
+```angular2html
+tmp= 0
+for num in nums:
+    tmp ^= num
+# rightmost 1-bit diff between x and y
+diff = tmp & (-tmp)#这个找到第一位不相同的方式厉害
+x = 0
+for num in nums:
+    if num & diff:#结果大于0执行，此位为1为一组，直接计算
+        x ^= num
+return [x, tmp^x]#tmp是两个数的异或值，一个值已经找到了
+```
