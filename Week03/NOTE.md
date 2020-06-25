@@ -240,3 +240,125 @@ def threeSumClosest(self, nums: List[int], target: int) -> int:
                 return min_closer
     return min_closer
 ```
+
+#### 最长回文子串
+1.暴力解法
+遍历出所有长度的子串，判断它是否是回文串，从结果中挑出最长的返回  时间复杂度是O(N^3)
+```angular2html
+def longestPalindrome(self, s: str) -> str:
+    res,max_length = '',0
+    for i in range(len(s)):
+        for j in range(i+1,len(s)+1):
+            cur_string = s[i:j]
+            if self.isPalidrome(cur_string) and len(cur_string)>max_length:
+                res = cur_string
+                max_length = max(max_length,len(res))
+    return res
+
+def isPalidrome(self,cur_string):
+    #判断是否回文字符
+    left,right = 0,len(cur_string)-1
+    while left<right:
+        if cur_string[left]!=cur_string[right]:
+            return False
+        left,right = left+1,right-1
+    return True
+```
+2.动态规划
+动态规划是指 如果这一刻的状态是可以由其他时刻的状态推导出来，那么我们可以记录该时刻的状态以推导此刻的状态  
+```angular2html
+#首先 长度为0、1的字符串 它是回文串
+#长度=2，判断左右是否相同
+#对于strs[i,j]而言它是否是回文串 取决于它内缩2位的字符串是否是回文串同时还要判断其边界是否相同，=2也可划归此类    
+#动态规划的思想就是 每一次的状态都是可以由其他时刻的状态导出的  
+#而通常我们在做题时，总会借助额外的空间，这个空间的维度与我们的状态有关，
+#比如此时要记录i,j组合状态，就需要二维数组记录
+#对于上面长度为0，1的字符串
+def longestPalindrome(self, s: str) -> str:
+    size = len(s)
+    dp = [[False] * size for _ in range(size)]  # 为什么是一个二维数组
+    res = ""
+    # 枚举子串的长度 l+1
+    for L in range(size):
+        # 枚举子串的起始位置 i，这样可以通过 j=i+l 得到子串的结束位置
+        for i in range(size):
+            j = i + L
+            if j >= len(s):
+                break
+            if L == 0:  # 如果当前字符长度为0
+                dp[i][j] = True#i==j，为True
+            elif L == 1:  # 如果当前字符长度为1
+                dp[i][j] = (s[i] == s[j])
+            else:  #
+                dp[i][j] = (dp[i + 1][j - 1] and s[i] == s[j])
+            if dp[i][j] and L + 1 > len(res):
+                res = s[i:j + 1]
+    return res
+```
+#### 序列话和反序列化二叉树
+遍历二叉树有深度和广度，但是由于要重建二叉树，我们普通的遍历结果是连在一起的，无法确定None节点在哪里，  
+所以如果想要用一次遍历的结果推导出其二叉树的构型 需要为叶节点的孩子打上标记
+1.BFS 层序遍历实现
+ - 1 序列化 层序遍历的二叉树 
+ ```angular2html
+def serialize(self, root):#层序遍历中使用deque是最简单的
+    #手写一个二叉树的层寻遍历
+    if not root: return []
+    dquene,res = [root],''
+    while dquene:
+        cur = dquene.pop(0)#使用了双端队列
+        if cur !=  None:
+            res += str(cur.val)+','
+            dquene.append(cur.left)
+            dquene.append(cur.right)           
+        else:
+            res += '#,'#标识None
+        return res
+```
+ - 2 重建时，如果遍历到的元素是#，那我们就不对它进行处理
+ ```angular2html
+def deserialize(self, data):
+    if not data: return None
+    data = data.split(',')
+    root = TreeNode(data.pop(0))
+    dquene = [root]
+    while dquene:
+        cur = dquene.pop(0)
+        if data:
+            cur_left = data.pop(0)
+            if cur_left != '#':#反序列化时，如果节点值为#就不处理
+                cur.left = TreeNode(cur_left)
+                dquene.append(cur.left)
+        # if data:
+            cur_right = data.pop(0)
+            if cur_right != '#':
+                cur.right = TreeNode(cur_right)
+                dquene.append(cur.right)
+    return root
+```
+
+2.前序遍历 递归解
+ - 1 序列化 前序遍历 
+```angular2html
+def serialize(self, root):
+    #手写一个二叉树的层寻遍历
+    if root == None: return '#,'
+    leftserilized = self.serialize(root.left)
+    rightserilized = self.serialize(root.right)
+    return str(root.val) + ',' + leftserilized + rightserilized
+```
+ - 2 反序列化 
+```angular2html
+def deserialize(self, data):
+    data = data.split(',')
+    root = self.deserializeCore(data)
+    return root
+    
+def deserializeCore(self,data):
+    root_val = data.pop(0)
+    if root_val == '#': return None
+    root = TreeNode(root_val)
+    root.left = self.deserializeCore(data)
+    root.right = self.deserializeCore(data)
+    return root
+```
