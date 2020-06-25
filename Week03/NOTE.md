@@ -159,3 +159,84 @@ while quene:
     if root.left: quene.append((depth + 1, root.left))
     if root.right: quene.append((depth + 1, root.right))
 ```
+
+#### 二进制求和
+1.进制转换后求解
+```angular2html
+return bin(int(a, 2)+int(b, 2))[2:]
+```
+2. 如果不能使用加减乘除
+```angular2html
+#2.如果不能使用加减乘除运算，则使用位运算
+x, y = int(a, 2), int(b, 2)
+while y:
+    res = x ^ y #无进位相加结果
+    carry = (x & y) << 1#计算x+y的进位
+    x, y = res, carry
+return bin(x)[2:]
+```
+
+
+#### 单词拆分
+1.动态规划 时间复杂度O(N^2),空间复杂度O(N)
+```angular2html
+#动态规划 用大小为len(s)+1的数组保存转态结果
+#dp[i]表示s的前i位是否能被worddict中的元素表示,最后只需要取转移数组的最后一位即可知道是否能够拆分
+#如何转移呢？
+#外层i从[0,len(s))，内层j[i+1,n]
+        #如何从i转移到j？ 如果dp[i]=True并且s[i:j]在worddict中，即可转移
+def wordBreak(self, s: str, wordDict: List[str]) -> bool:
+    dp = [False for _ in range(len(s)+1)]
+    dp[0] = True
+    for i in range(len(s)):
+        for j in range(i+1,len(s)+1):
+            if dp[i]==True and s[i:j] in wordDict:
+                dp[j] = True
+    return dp[-1]
+```
+2.备忘录回溯
+```angular2html
+#备忘录回溯
+def wordBreak(self, s: str, wordDict: List[str]) -> bool:
+    import functools
+    @functools.lru_cache
+    def backtrace(s):
+        if not s: return True#s已经考察结束
+        res = False
+        for i in range(1, len(s)+1):#
+            if s[:i] in wordDict:
+                res = backtrace(s[i:]) or res#记录递归过程中的res
+        return res#最后返回的相当于是dp[-1]or(dp[-2]or(dp[-n])) 其实只用看最后一层的res即可
+    return backtrace(s)
+```
+
+#### 最接近的三数之和
+1.枚举所有组合 枚举过程中 使用双指针优化 枚举过程  
+这里最后是要返回最接近target的三个数的和 min_closer 用来记录最接近的三数之和  
+首先对数组排序 然后 写出标准的三指针遍历模式 对于left<right 记录当前的三数之和   
+如果当前的三数之和与target差值的绝对值 小于 abs(min_closer-tmp)，就将min_closer=tmp    
+如果小于target，left+1 如果大于target，right-1 如果=target就返回这个三数之和  
+遍历结束之后 没有返回 说明没有=target的组合 那么就返回记录的最接近的三数之和min_closer  
+```angular2html
+def threeSumClosest(self, nums: List[int], target: int) -> int:
+    nums.sort()  # 先排序
+    # [-4,-1,1,2],1
+    min_closer = float('inf')
+    for i in range(len(nums) - 2):  # 为双指针留出位置
+        if i > 0 and nums[i] == nums[i - 1]:  # 保证前后两个数字不一，因为只有一组解
+            continue
+        left, right = i + 1, len(nums) - 1
+        while left < right:
+            tmp = nums[i] + nums[left] + nums[right]  # 先记录当前遍历得到的三数之和
+            if abs(min_closer - target) > abs(tmp - target):
+                min_closer = tmp
+            # min_closer = min(abs(target-tmp),min_closer)
+            if tmp < target:  # 如果还没有找到相等的 ，j右移
+                left = left + 1
+                # cur_diff = abs()
+            elif tmp > target:  # 如果找着找着 大于target了，就需要和之前记录的min_diff比较
+                right = right - 1
+            else:  # tmp==target:
+                return min_closer
+    return min_closer
+```
