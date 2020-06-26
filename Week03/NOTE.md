@@ -1,42 +1,6 @@
 学习笔记
 
-#### 括号生成
-1.因为括号类别已经确定，可以想象为左右括号最多N个
-左括号出现次数小于N即可,右括号小于左括号个数
-```angular2html
-def generateParenthesis(self,n):
-    result = []
-    self._generate_parenthesis(0, 0, n, '',result)
-    return result
 
-def _generate_parenthesis(self, left, right, n, res, result):
-    # recursive terminator
-    if left == n and right == n:
-        result.append(res)
-        return
-    # current process
-    if left < n: self._generate_parenthesis(left + 1, right, n, res + '(', result)
-    if left > right: self._generate_parenthesis(left, right + 1, n, res + ')', result)
-
-    # drill down
-
-    # reverse state
-```
-上面这种解法，由于最后要返回res，所以在递归时传入的参数较多，可以简化一下
-```angular2html
-def generateParenthesis(self,n):
-    result = []
-    def _generate_parenthesis( left, right, n, res):
-        # recursive terminator
-        if left == n and right == n:
-            result.append(res)
-            return
-        # current process
-        if left < n: _generate_parenthesis(left + 1, right, n, res + '(')
-        if left > right: _generate_parenthesis(left, right + 1, n, res + ')')
-    _generate_parenthesis(0, 0, n, '')
-    return result
-```
 
 #### 翻转二叉树
 1.递归
@@ -473,4 +437,115 @@ if not head: return head
         else:#如果这个元素已经出现，那就直接删除掉
             head.next = head.next.next
     return pre
+```
+
+#### 括号生成
+1.因为括号类别已经确定，可以想象为左右括号最多N个
+左括号出现次数小于N即可,右括号小于左括号个数
+```angular2html
+def generateParenthesis(self,n):
+    result = []
+    self._generate_parenthesis(0, 0, n, '',result)
+    return result
+
+def _generate_parenthesis(self, left, right, n, res, result):
+    # recursive terminator
+    if left == n and right == n:
+        result.append(res)
+        return
+    # current process
+    if left < n: self._generate_parenthesis(left + 1, right, n, res + '(', result)
+    if left > right: self._generate_parenthesis(left, right + 1, n, res + ')', result)
+
+    # drill down
+
+    # reverse state
+```
+上面这种解法，由于最后要返回res，所以在递归时传入的参数较多，可以简化一下
+```angular2html
+def generateParenthesis(self,n):
+    result = []
+    def _generate_parenthesis( left, right, n, res):
+        # recursive terminator
+        if left == n and right == n:
+            result.append(res)
+            return
+        # current process
+        if left < n: _generate_parenthesis(left + 1, right, n, res + '(')
+        if left > right: _generate_parenthesis(left, right + 1, n, res + ')')
+    _generate_parenthesis(0, 0, n, '')
+    return result
+```
+
+#### 组合
+碰到组合、全排列、括号生成这种打印类的题，一般都是 回溯算法，回溯算法有一个基本模板：
+```angular2html
+def backtracing(路径,可选路径)：
+    #触发结束条件
+    #for i in range():
+        #处理不符合条件的
+        #执行当前选择 路径+，可选路径-
+        #进入下一层决策
+        #进行有必要的撤销选择以进行回溯
+
+```
+
+```angular2html
+def combine(self, n, k):
+    def backtracing(first=1, tmp=[]):
+        #触发结束条件
+        if len(tmp) == k:  # 如果当前元素 已经有k个，就将它加入res中
+            res.append(tmp[:])
+        for i in range(first, n + 1):  # 如果当前元素个数小于k，则加入cur中
+            # 做选择
+            tmp.append(i)
+            # 进入下一层决策
+            backtracing(i + 1, tmp)
+            # 撤销刚才的选择  
+            tmp.pop()  
+    res = []
+    backtracing()
+    return res
+```
+
+
+#### 组合II
+
+#### 全排列
+```angular2html
+def permute(self, nums: List[int]) -> List[List[int]]:
+    def backtrace(nums, tmp):
+        #触发结束条件
+        if not nums:
+            res.append(tmp[:])
+        for i in range(len(nums)):
+            #排除不合法或已存在的
+            if nums[i] in tmp: continue
+            #做选择 修改已选路径和能选择的路径
+            #进入下一次决策、回溯之前的决策
+            backtrace(nums[:i] + nums[i + 1:], tmp + [nums[i]])#修改选择项和路径
+    res = []
+    backtrace(nums, [])
+    return res
+```
+
+#### 全排列II
+```angular2html
+def permuteUnique(self, nums):
+    """
+    :type nums: List[int]
+    :rtype: List[List[int]]
+    """
+    def backtrace(nums, tmp):
+        if not nums:
+            res.append(tmp[:])
+        visited = set()
+        for i in range(len(nums)):
+            if nums[i] in visited: continue
+            backtrace(nums[:i] + nums[i + 1:], tmp + [nums[i]])#修改选择项和路径
+            visited.add(nums[i])
+
+    res = []
+    backtrace(nums, [])
+    return res
 ```
