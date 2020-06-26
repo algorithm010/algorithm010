@@ -53,16 +53,17 @@ class Solution(object):
         if left > right: self._generate_parenthesis(left, right + 1, n, res + ')', result)
     #击败82%，不需要传递五个变量
     def generateParenthesisII(self, n):
-        result = []
+
         def _generate_parenthesis(left, right, n, res):
             # recursive terminator
-            if left == n and right == n:
+            if left == n and right == n:#触发结束条件
                 result.append(res)
                 return
-            # current process
+            # current process #排除不合法的选择 做选择  进入下一层决策树
             if left < n: _generate_parenthesis(left + 1, right, n, res + '(')
             if left > right: _generate_parenthesis(left, right + 1, n, res + ')')
-
+            #取消选择
+        result = []
         _generate_parenthesis(0, 0, n, '')
         return result
 

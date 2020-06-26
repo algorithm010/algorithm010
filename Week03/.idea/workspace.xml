@@ -2,12 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad77f17f-1ded-48f1-b0ae-9062bc5fe713" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/序列化和反序列化二叉树.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/二叉树的最近公共祖先.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/每日一题6_26_移除重复节点.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/每日一题6_26_组合.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/每日一题6_26前中序列重建二叉树.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/每日一题6_27_全排列.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Week01/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Week01/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Week02/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Week02/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/leetcode/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/leetcode/editor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NOTE.md" beforeDir="false" afterPath="$PROJECT_DIR$/NOTE.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/每日一题6_25_最长回文子串.py" beforeDir="false" afterPath="$PROJECT_DIR$/每日一题6_25_最长回文子串.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/每日一题6_22_括号生成.py" beforeDir="false" afterPath="$PROJECT_DIR$/每日一题6_22_括号生成.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,6 +22,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/Week03$6_22_.coverage" NAME="每日一题6_22_括号生成 Coverage Results" MODIFIED="1592835194979" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Week03$6_27_.coverage" NAME="每日一题6_27_全排列 Coverage Results" MODIFIED="1593186311053" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Week03$6_23_.coverage" NAME="每日一题6_23_二进制求和 Coverage Results" MODIFIED="1592919202522" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Week03$6_25_.coverage" NAME="每日一题6_25_最长回文子串 Coverage Results" MODIFIED="1593057975510" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -31,29 +37,29 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="md" value="1" />
-          <entry key="py" value="19" />
+          <entry key="py" value="27" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Markdown" value="1" />
-          <entry key="Python" value="19" />
+          <entry key="Python" value="27" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Python Console" value="228" />
+          <entry key="Python Console" value="422" />
           <entry key="dummy" value="12" />
-          <entry key="md" value="2093" />
-          <entry key="py" value="3457" />
+          <entry key="md" value="2556" />
+          <entry key="py" value="4447" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="7" />
-          <entry key="Markdown" value="2086" />
+          <entry key="Markdown" value="2549" />
           <entry key="PLAIN_TEXT" value="12" />
-          <entry key="Python" value="3685" />
+          <entry key="Python" value="4869" />
         </counts>
       </usages-collector>
     </session>
@@ -61,51 +67,20 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/翻转二叉树.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="59">
-              <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/每日一题6_24_最接近的三数之和.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
-              <caret line="30" column="23" lean-forward="true" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/每日一题6_25_最长回文子串.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="27" column="65" lean-forward="true" selection-start-line="23" selection-start-column="4" selection-end-line="27" selection-end-column="65" />
-              <folding>
-                <marker date="1593059631791" expanded="true" signature="81:86" ph="..." />
-                <marker date="1593059631791" expanded="true" signature="131:136" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/每日一题6_25_单词拆分.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
+            <state relative-caret-position="-65">
               <caret line="61" column="43" lean-forward="true" selection-start-line="61" selection-start-column="43" selection-end-line="61" selection-end-column="43" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NOTE.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="155">
-                <caret line="349" column="10" lean-forward="true" selection-start-line="349" selection-start-column="10" selection-end-line="349" selection-end-column="10" />
+              <first_editor relative-caret-position="250">
+                <caret line="471" column="10" selection-start-line="471" selection-start-column="10" selection-end-line="471" selection-end-column="10" />
               </first_editor>
               <second_editor />
             </state>
@@ -113,28 +88,79 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/序列化和反序列化二叉树.py">
+        <entry file="file://$PROJECT_DIR$/每日一题6_26前中序列重建二叉树.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="34" column="33" lean-forward="true" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
+            <state relative-caret-position="190">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/每日一题6_23_二进制求和.py">
+        <entry file="file://$PROJECT_DIR$/每日一题6_26_组合.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="33" column="23" lean-forward="true" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="23" />
+            <state relative-caret-position="196">
+              <caret line="12" column="27" lean-forward="true" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/每日一题6_27_全排列.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="178">
+              <caret line="28" column="31" lean-forward="true" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+              <folding>
+                <marker date="1593186289632" expanded="true" signature="90:95" ph="..." />
+                <marker date="1593186289632" expanded="true" signature="157:474" ph="..." />
+                <marker date="1593186289632" expanded="true" signature="630:638" ph="..." />
+                <marker date="1593186289632" expanded="true" signature="726:735" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[67]二进制求和.py">
+        <entry file="file://$PROJECT_DIR$/每日一题6_22_括号生成.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="12" column="2" lean-forward="true" selection-end-line="38" />
+            <state relative-caret-position="336">
+              <caret line="64" column="17" selection-start-line="64" selection-start-column="17" selection-end-line="64" selection-end-column="17" />
+              <folding>
+                <marker date="1593180768010" expanded="true" signature="373:378" ph="..." />
+                <marker date="1593180768010" expanded="true" signature="455:466" ph="..." />
+                <marker date="1593180768010" expanded="true" signature="455:745" ph="..." />
+                <marker date="1593180768010" expanded="true" signature="745:749" ph="..." />
+                <marker date="1593180768010" expanded="true" signature="1058:1059" ph="..." />
+                <marker date="1593180768010" expanded="true" signature="1058:1064" ph="..." />
+                <marker date="1593180768010" expanded="true" signature="2149:2150" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/二叉树的最近公共祖先.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="263">
+              <caret line="36" column="18" lean-forward="true" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/每日一题6_26_移除重复节点.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="56" column="18" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[面试题 02.01]移除重复节点.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="10" column="2" lean-forward="true" selection-end-line="43" />
             </state>
           </provider>
         </entry>
@@ -156,7 +182,6 @@
       <list>
         <option value="$PROJECT_DIR$/recursive_general_mode.py" />
         <option value="$PROJECT_DIR$/爬楼梯.py" />
-        <option value="$PROJECT_DIR$/每日一题6_22_括号生成.py" />
         <option value="$PROJECT_DIR$/翻转二叉树.py" />
         <option value="$PROJECT_DIR$/验证二叉搜索树.py" />
         <option value="$PROJECT_DIR$/二叉树的最大深度.py" />
@@ -167,7 +192,13 @@
         <option value="$PROJECT_DIR$/每日一题6_24_最接近的三数之和.py" />
         <option value="$PROJECT_DIR$/每日一题6_25_最长回文子串.py" />
         <option value="$PROJECT_DIR$/序列化和反序列化二叉树.py" />
+        <option value="$PROJECT_DIR$/每日一题6_26前中序列重建二叉树.py" />
+        <option value="$PROJECT_DIR$/二叉树的最近公共祖先.py" />
         <option value="$PROJECT_DIR$/NOTE.md" />
+        <option value="$PROJECT_DIR$/每日一题6_26_移除重复节点.py" />
+        <option value="$PROJECT_DIR$/每日一题6_26_组合.py" />
+        <option value="$PROJECT_DIR$/每日一题6_22_括号生成.py" />
+        <option value="$PROJECT_DIR$/每日一题6_27_全排列.py" />
       </list>
     </option>
   </component>
@@ -221,7 +252,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.每日一题6_25_最长回文子串">
+  <component name="RunManager" selected="Python.每日一题6_27_全排列">
     <configuration name="每日一题6_22_括号生成" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Week03" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -310,14 +341,38 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="每日一题6_27_全排列" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Week03" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/每日一题6_27_全排列.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.每日一题6_22_括号生成" />
       <item itemvalue="Python.每日一题6_23_二进制求和" />
       <item itemvalue="Python.每日一题6_25_单词拆分" />
       <item itemvalue="Python.每日一题6_25_最长回文子串" />
+      <item itemvalue="Python.每日一题6_27_全排列" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.每日一题6_27_全排列" />
         <item itemvalue="Python.每日一题6_25_最长回文子串" />
         <item itemvalue="Python.每日一题6_25_单词拆分" />
         <item itemvalue="Python.每日一题6_23_二进制求和" />
@@ -343,18 +398,18 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21324718" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21324718" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Python Console" visible="true" weight="0.32876712" />
+      <window_info anchor="bottom" id="Python Console" weight="0.32876712" />
       <window_info anchor="bottom" id="Terminal" weight="0.32876712" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3260274" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -489,6 +544,36 @@
           <line>51</line>
           <option name="timeStamp" value="31" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/每日一题6_27_全排列.py</url>
+          <line>6</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/每日一题6_27_全排列.py</url>
+          <line>7</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/每日一题6_27_全排列.py</url>
+          <line>9</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/每日一题6_27_全排列.py</url>
+          <line>10</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/每日一题6_27_全排列.py</url>
+          <line>11</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/每日一题6_27_全排列.py</url>
+          <line>12</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
@@ -518,22 +603,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3">
           <caret line="12" column="17" lean-forward="true" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/每日一题6_22_括号生成.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="42" column="30" lean-forward="true" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
-          <folding>
-            <marker date="1592837100230" expanded="true" signature="373:378" ph="..." />
-            <marker date="1592837100230" expanded="true" signature="455:466" ph="..." />
-            <marker date="1592837100230" expanded="true" signature="455:745" ph="..." />
-            <marker date="1592837100230" expanded="true" signature="745:749" ph="..." />
-            <marker date="1592837100230" expanded="true" signature="1058:1059" ph="..." />
-            <marker date="1592837100230" expanded="true" signature="1058:1064" ph="..." />
-            <marker date="1592837100230" expanded="true" signature="2100:2101" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -579,13 +648,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="59">
           <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="331" selection-start-line="331" selection-end-line="331" />
         </state>
       </provider>
     </entry>
@@ -644,18 +706,89 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/每日一题6_25_单词拆分.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
+        <state relative-caret-position="-65">
           <caret line="61" column="43" lean-forward="true" selection-start-line="61" selection-start-column="43" selection-end-line="61" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/二叉树的最近公共祖先.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="36" column="18" lean-forward="true" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[面试题 02.01]移除重复节点.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="2" lean-forward="true" selection-end-line="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/NOTE.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="155">
-            <caret line="349" column="10" lean-forward="true" selection-start-line="349" selection-start-column="10" selection-end-line="349" selection-end-column="10" />
+          <first_editor relative-caret-position="250">
+            <caret line="471" column="10" selection-start-line="471" selection-start-column="10" selection-end-line="471" selection-end-column="10" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/每日一题6_26_移除重复节点.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="56" column="18" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/每日一题6_26前中序列重建二叉树.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="320" selection-start-line="320" selection-end-line="320" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/每日一题6_22_括号生成.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="64" column="17" selection-start-line="64" selection-start-column="17" selection-end-line="64" selection-end-column="17" />
+          <folding>
+            <marker date="1593180768010" expanded="true" signature="373:378" ph="..." />
+            <marker date="1593180768010" expanded="true" signature="455:466" ph="..." />
+            <marker date="1593180768010" expanded="true" signature="455:745" ph="..." />
+            <marker date="1593180768010" expanded="true" signature="745:749" ph="..." />
+            <marker date="1593180768010" expanded="true" signature="1058:1059" ph="..." />
+            <marker date="1593180768010" expanded="true" signature="1058:1064" ph="..." />
+            <marker date="1593180768010" expanded="true" signature="2149:2150" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/每日一题6_26_组合.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="12" column="27" lean-forward="true" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/每日一题6_27_全排列.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="28" column="31" lean-forward="true" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+          <folding>
+            <marker date="1593186289632" expanded="true" signature="90:95" ph="..." />
+            <marker date="1593186289632" expanded="true" signature="157:474" ph="..." />
+            <marker date="1593186289632" expanded="true" signature="630:638" ph="..." />
+            <marker date="1593186289632" expanded="true" signature="726:735" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
