@@ -5,7 +5,6 @@
       <change beforePath="$PROJECT_DIR$/../Week01/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Week01/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Week02/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Week02/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NOTE.md" beforeDir="false" afterPath="$PROJECT_DIR$/NOTE.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/验证二叉搜索树.py" beforeDir="false" afterPath="$PROJECT_DIR$/验证二叉搜索树.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -106,8 +105,8 @@
         <entry file="file://$PROJECT_DIR$/NOTE.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="213">
-                <caret line="100" column="29" selection-start-line="100" selection-start-column="29" selection-end-line="100" selection-end-column="29" />
+              <first_editor relative-caret-position="271">
+                <caret line="121" column="49" selection-start-line="121" selection-start-column="49" selection-end-line="121" selection-end-column="49" />
               </first_editor>
               <second_editor />
             </state>
@@ -1045,8 +1044,8 @@
     <entry file="file://$PROJECT_DIR$/NOTE.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="213">
-            <caret line="100" column="29" selection-start-line="100" selection-start-column="29" selection-end-line="100" selection-end-column="29" />
+          <first_editor relative-caret-position="271">
+            <caret line="121" column="49" selection-start-line="121" selection-start-column="49" selection-end-line="121" selection-end-column="49" />
           </first_editor>
           <second_editor />
         </state>

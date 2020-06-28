@@ -119,7 +119,7 @@ if not root: return 0
 quene = [(1, root)]
 while quene:
     #[3,9,20,null,null,15,7]
-    depth, root = quene.pop(0)  # 保证从左往右看，如果是pop(0)，那么可能往右看的过程中返回了，而丢失了应有的最小值
+    depth, root = quene.pop(0)  # 保证从左往右看，如果是pop()，那么可能往右看的过程中返回了，而丢失了应有的最小值
     if not root.left and not root.right: return depth  # 如果此节点左右为空 返回当前depth
     if root.left: quene.append((depth + 1, root.left))
     if root.right: quene.append((depth + 1, root.right))
