@@ -53,16 +53,16 @@ class Solution(object):
         """
         #依据是 二叉搜索树的中序遍历是有递增的 击败11%
         #recursive terminator
-        if root is None: return True
-        #current prpcess
-        #确定左子树是否符合排序二叉树，如果不满足，就返回False
-        if not self.isValidBST(root.left): return False
-        if root.val <= self.pre_val: return False#不满足左子树小于根节点
-        self.pre_val = root.val#记录上一个访问的节点的值
-        #访问右子树
-
-        # drill down
-        return self.isValidBST(root.right)
+        # if root is None: return True
+        # #current prpcess
+        # #确定左子树是否符合排序二叉树，如果不满足，就返回False
+        # if not self.isValidBST(root.left): return False
+        # if root.val <= self.pre_val: return False#不满足左子树小于根节点
+        # self.pre_val = root.val#记录上一个访问的节点的值
+        # #访问右子树
+        #
+        # # drill down
+        # return self.isValidBST(root.right)
 
         #中序遍历 迭代 击败73%
         stack, pre_val = [], float('-inf')

@@ -98,6 +98,7 @@ return depth
 ```
 
 #### 二叉树的最小深度
+最小深度是从根节点到最近叶子节点的最短路径上的节点数量  
 1.递归 递归时需要弄清楚递归的结束条件
 ```angular2html
 def minDepth(self, root: TreeNode) -> int:

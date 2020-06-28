@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad77f17f-1ded-48f1-b0ae-9062bc5fe713" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/每日一题6_27_子集.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/每日一题6_28_字符串相乘.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/每日一题6_28_字符串相加.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/每日一题6_28_长度最小的子数组.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Week01/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Week01/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Week02/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Week02/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/leetcode/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/leetcode/editor.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NOTE.md" beforeDir="false" afterPath="$PROJECT_DIR$/NOTE.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/每日一题6_27_Pow(x,n).py" beforeDir="false" afterPath="$PROJECT_DIR$/每日一题6_27_Pow(x,n).py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/每日一题6_27_全排列II.py" beforeDir="false" afterPath="$PROJECT_DIR$/每日一题6_27_全排列II.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/验证二叉搜索树.py" beforeDir="false" afterPath="$PROJECT_DIR$/验证二叉搜索树.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,27 +35,27 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="md" value="2" />
-          <entry key="py" value="40" />
+          <entry key="py" value="42" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Markdown" value="2" />
-          <entry key="Python" value="40" />
+          <entry key="Python" value="42" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="517" />
           <entry key="dummy" value="12" />
-          <entry key="md" value="3582" />
+          <entry key="md" value="3595" />
           <entry key="py" value="6040" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="23" />
-          <entry key="Markdown" value="3559" />
+          <entry key="Markdown" value="3572" />
           <entry key="PLAIN_TEXT" value="12" />
           <entry key="Python" value="6557" />
         </counts>
@@ -114,8 +106,8 @@
         <entry file="file://$PROJECT_DIR$/NOTE.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="328">
-                <caret line="678" lean-forward="true" selection-start-line="678" selection-end-line="678" />
+              <first_editor relative-caret-position="213">
+                <caret line="100" column="29" selection-start-line="100" selection-start-column="29" selection-end-line="100" selection-end-column="29" />
               </first_editor>
               <second_editor />
             </state>
@@ -134,17 +126,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/每日一题6_28_长度最小的子数组.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
+            <state relative-caret-position="-10">
               <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test.py">
+        <entry file="file://$PROJECT_DIR$/验证二叉搜索树.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="6" selection-end-column="58" />
+            <state relative-caret-position="200">
+              <caret line="55" column="32" lean-forward="true" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/二叉树的最小深度.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="570">
+              <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="37" selection-end-column="64" />
+              <folding>
+                <marker date="1592918742896" expanded="true" signature="281:290" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -185,7 +189,6 @@
         <option value="$PROJECT_DIR$/recursive_general_mode.py" />
         <option value="$PROJECT_DIR$/爬楼梯.py" />
         <option value="$PROJECT_DIR$/翻转二叉树.py" />
-        <option value="$PROJECT_DIR$/验证二叉搜索树.py" />
         <option value="$PROJECT_DIR$/二叉树的最大深度.py" />
         <option value="$PROJECT_DIR$/二叉树的最小深度.py" />
         <option value="$PROJECT_DIR$/每日一题6_23_二进制求和.py" />
@@ -207,6 +210,7 @@
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/每日一题6_28_字符串相乘.py" />
         <option value="$PROJECT_DIR$/每日一题6_28_长度最小的子数组.py" />
+        <option value="$PROJECT_DIR$/验证二叉搜索树.py" />
         <option value="$PROJECT_DIR$/NOTE.md" />
       </list>
     </option>
@@ -450,12 +454,12 @@
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.071890146" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22213247" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49919224" visible="true" weight="0.3260274" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49919224" visible="true" weight="0.3260274" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -796,27 +800,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/验证二叉搜索树.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="77" column="19" lean-forward="true" selection-start-line="67" selection-start-column="8" selection-end-line="77" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/二叉树的最大深度.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
           <caret line="19" column="17" lean-forward="true" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/二叉树的最小深度.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="37" selection-end-column="64" />
-          <folding>
-            <marker date="1592918742896" expanded="true" signature="281:290" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1024,13 +1011,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/每日一题6_28_长度最小的子数组.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/每日一题6_28_字符串相乘.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
@@ -1038,11 +1018,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/每日一题6_28_长度最小的子数组.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-10">
+          <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/二叉树的最小深度.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="37" selection-end-column="64" />
+          <folding>
+            <marker date="1592918742896" expanded="true" signature="281:290" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/验证二叉搜索树.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="55" column="32" lean-forward="true" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/NOTE.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="328">
-            <caret line="678" lean-forward="true" selection-start-line="678" selection-end-line="678" />
+          <first_editor relative-caret-position="213">
+            <caret line="100" column="29" selection-start-line="100" selection-start-column="29" selection-end-line="100" selection-end-column="29" />
           </first_editor>
           <second_editor />
         </state>
