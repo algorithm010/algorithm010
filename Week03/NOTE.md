@@ -541,11 +541,138 @@ def permuteUnique(self, nums):
             res.append(tmp[:])
         visited = set()
         for i in range(len(nums)):
-            if nums[i] in visited: continue
-            backtrace(nums[:i] + nums[i + 1:], tmp + [nums[i]])#修改选择项和路径
+            if nums[i] in visited: continue            
             visited.add(nums[i])
+            backtrace(nums[:i] + nums[i + 1:], tmp + [nums[i]])#修改选择项和路径
 
     res = []
     backtrace(nums, [])
     return res
+```
+
+#### Pow(x,n)
+1.遍历n次，时间复杂度O(N)
+```angular2html
+if n==0: return 1
+flag=False if n< 0 else True
+times,res = abs(n),1
+while times>0:
+    res *= x
+    times -= 1 
+return res if flag else 1/res
+```
+递归形式如下 但是都超出时间限制    
+```angular2html
+if n == 1: return x
+if n < 0:
+    return 1 / self.myPow(x, -n)
+return self.myPow(x, n // 2) * self.myPow(x, n - n // 2)
+```
+
+2.我们可以将这个问题的时间复杂度缩减到O(logN),求x的N次方 我们可以化简为计算两次x的N/2次（判断奇偶）
+```angular2html
+if n == 1: return x
+if n < 0:
+    return 1 / self.myPow(x, -n)
+return self.myPow(x*x, n // 2) if n%2==0 else x*self.myPow(x, n-1)
+```
+
+#### 子集
+1.递归
+```angular2html
+def subsets(self, nums: List[int]) -> List[List[int]]:
+    res = [[]]
+    for num in nums:
+        res += [tmp + [num] for tmp in res]
+    return res
+```
+2.回溯
+```angular2html
+def subsets(self, nums: List[int]) -> List[List[int]]:    
+    def backtrack(first=0, tmp=[]):
+    #处理结束条件
+    if len(tmp) == k:
+        res.append(tmp[:])
+    for i in range(first, size):
+        #选择
+        tmp.append(nums[i])
+        # print(curr)
+        #下一层决策
+        backtrack(i + 1, tmp)
+                tmp.pop()
+    res = []
+    size = len(nums)
+    for k in range(size + 1):
+        backtrack()
+    return res
+
+```
+3.位运算
+```angular2html
+def subsets(self, nums: List[int]) -> List[List[int]]:    
+    size = len(nums)
+    res = []
+    for i in range(2 ** size, 2 ** (size + 1)):
+        # generate bitmask, from 0..00 to 1..11
+        bitmask = bin(i)[3:]
+        # append subset corresponding to that bitmask
+        res.append([nums[j] for j in range(size) if bitmask[j] == '1'])
+    return res
+```
+
+#### 字符串相加
+手动模拟数字进位加法，如果两个数长度不一致，就在将其作为0处理
+```angular2html
+def addStrings(self, num1, num2):
+    """
+    :type num1: str
+    :type num2: str
+    :rtype: str
+    """
+    #1.转数字计算
+    # return str(int(num1)+int(num2))
+    # 2.手动模拟加法运算
+    res = ''
+    i, j, carry = len(num1) - 1,len(num2) - 1, 0
+    while i >= 0 or j >= 0:
+        n1 = int(num1[i]) if i >= 0 else 0
+        n2 = int(num2[j]) if j >= 0 else 0
+        tmp = n1 + n2 + carry
+        carry = tmp // 10
+        res = str(tmp % 10) + res
+        i, j = i - 1, j - 1
+    return '1' + res if carry else res
+```
+
+#### 长度最小的子数组
+1.枚举出长度为1,2,3...的数组，查看其值是否大于s，如果大于则可以直接返回 此时的枚举长度 但是时间复杂度高 O(N^2)
+```angular2html
+def minSubArrayLen(self, s, nums):
+# 1. 穷举 超出时间限制
+    for i in range(1, len(nums) + 1):
+        # 长度为1，2，3，穷举可能的解，找到则返回
+        for j in range(len(nums) - i + 1):
+            if sum(nums[j:i + j]) >= s: return i
+    return 0
+```
+2.穷举的过程中，有很多不必要的开销，比如每次指定长度的窗口，但是大多数窗口都是无效的  
+就像窗口为1时 计算和之后 判断了一次 如果不符合规定 就往后挪了一位 不符合需要继续后移  
+窗口值为2时，又计算了前面的过程  
+所以我们可以使用双指针 来界定是否是最短子数组
+双指针开始时指向 数组头 如果当前窗口和 小于s，end右移 以达到期望的s，如果此时已经到达s，记录下当前的窗口值  
+将当前窗口往右移动 继续判断窗口值与s的关系，如果小了，就右移end；如果还是大于s，窗口继续右移
+```angular2html
+def minSubArrayLen(self, s, nums):
+    if not nums: return 0
+    size, res = len(nums), len(nums) + 1
+    start, end = 0, 0
+    tmp = 0  # 记录窗口和
+    while end < size:
+        tmp = tmp + nums[end]
+        while tmp >= s:  # 如果当前窗口和值大于s,收缩窗口
+            res = min(res, end - start + 1)
+            tmp = tmp - nums[start]
+            start = start + 1
+        end = end + 1  # 窗口扩张
+    return 0 if end == size + 1 else res
 ```

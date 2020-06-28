@@ -13,9 +13,9 @@ class Solution(object):
                 res.append(tmp[:])
             visited = set()
             for i in range(len(nums)):
-                if nums[i] in visited: continue
-                backtrace(nums[:i] + nums[i + 1:], tmp + [nums[i]])#修改选择项和路径
+                if nums[i] in visited: continue#在每一层剪枝
                 visited.add(nums[i])
+                backtrace(nums[:i] + nums[i + 1:], tmp + [nums[i]])#修改选择项和路径
 
         res = []
         backtrace(nums, [])
