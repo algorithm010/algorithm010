@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a0428ec-df57-4da7-98a9-a29d033fb663" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/每日一题6_29_二叉树的层序遍历.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/每日一题6_30_最小基因变化.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/每日一题6_30_在每个树行中找最大值.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Week01/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Week01/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Week02/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Week02/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Week03/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Week03/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/leetcode/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/leetcode/editor.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NOTE.md" beforeDir="false" afterPath="$PROJECT_DIR$/NOTE.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,26 +27,26 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="md" value="1" />
-          <entry key="py" value="4" />
+          <entry key="py" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Markdown" value="1" />
-          <entry key="Python" value="4" />
+          <entry key="Python" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="375" />
-          <entry key="py" value="872" />
+          <entry key="md" value="398" />
+          <entry key="py" value="942" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="4" />
-          <entry key="Markdown" value="371" />
-          <entry key="Python" value="872" />
+          <entry key="Markdown" value="394" />
+          <entry key="Python" value="942" />
         </counts>
       </usages-collector>
     </session>
@@ -80,10 +81,28 @@
         <entry file="file://$PROJECT_DIR$/NOTE.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="110">
-                <caret line="81" column="68" selection-start-line="81" selection-start-column="68" selection-end-line="81" selection-end-column="68" />
+              <first_editor relative-caret-position="383">
+                <caret line="121" column="20" selection-start-line="121" selection-start-column="20" selection-end-line="121" selection-end-column="20" />
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/每日一题6_30_在每个树行中找最大值.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="307">
+              <caret line="41" column="26" lean-forward="true" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[515]在每个树行中找最大值.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="18" column="18" selection-end-line="34" />
             </state>
           </provider>
         </entry>
@@ -114,6 +133,7 @@
       <list>
         <option value="$PROJECT_DIR$/每日一题6_29_二叉树的层序遍历.py" />
         <option value="$PROJECT_DIR$/每日一题6_30_最小基因变化.py" />
+        <option value="$PROJECT_DIR$/每日一题6_30_在每个树行中找最大值.py" />
         <option value="$PROJECT_DIR$/NOTE.md" />
       </list>
     </option>
@@ -185,7 +205,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15508886" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15508886" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
@@ -200,7 +220,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="leetcode" sideWeight="0.5007299" side_tool="true" weight="0.32956383" />
+      <window_info active="true" anchor="right" id="leetcode" sideWeight="0.5007299" side_tool="true" visible="true" weight="0.08319871" />
       <window_info anchor="right" id="SciView" sideWeight="0.49927008" weight="0.32956383" />
       <window_info anchor="right" id="Database" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -247,11 +267,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[515]在每个树行中找最大值.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="18" column="18" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/每日一题6_30_在每个树行中找最大值.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="41" column="26" lean-forward="true" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/NOTE.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="110">
-            <caret line="81" column="68" selection-start-line="81" selection-start-column="68" selection-end-line="81" selection-end-column="68" />
+          <first_editor relative-caret-position="383">
+            <caret line="121" column="20" selection-start-line="121" selection-start-column="20" selection-end-line="121" selection-end-column="20" />
           </first_editor>
           <second_editor />
         </state>
