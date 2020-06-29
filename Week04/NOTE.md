@@ -130,5 +130,36 @@ class Solution(object):
             # res.append(layer_max)
         return [max(item) for item in res]
         # return res
-
+```
+其中，如果以后再遇到这样的判别  
+`if not root: return []`后面接`while`循环，就直接使用如下形式  
+```angular2html
+class Solution:
+    def largestValues(self, root: TreeNode) -> List[int]:
+        # if not root: return []
+        quene, res = [root], []
+        while any(quene):
+            # cur_layer = []
+            layer_max = float('-inf')
+            for _ in range(len(quene)):
+                cur = quene.pop(0)
+                if cur.left: quene.append(cur.left)
+                if cur.right: quene.append(cur.right)
+                layer_max = max(layer_max,cur.val)
+                # cur_layer.append(cur.val)
+            # res.append(cur_layer)
+            res.append(layer_max)
+        # return [max(item) for item in res]
+        return res
+```
+最后给一段极简python代码  
+```angular2html
+class Solution:
+    def largestValues(self, root: TreeNode) -> List[int]:
+        maxes = []
+        row = [root]
+        while any(row):
+            maxes.append(max(node.val for node in row))
+            row = [kid for node in row for kid in (node.left, node.right) if kid]
+        return maxes
 ```
