@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="LeetcodeEditor">
+    <option name="projectConfig">
+      <map>
+        <entry key="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[102]二叉树的层序遍历.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[102]二叉树的层序遍历.py" />
+              <option name="questionId" value="102" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[433]最小基因变化.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$USER_HOME$/Documents/paid_course/leetcode/leetcode/editor/cn/[433]最小基因变化.py" />
+              <option name="questionId" value="433" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
