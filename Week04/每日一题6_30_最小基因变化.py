@@ -58,7 +58,7 @@
 
 # 1.BFS 所谓BFS就是类似二叉树BFS我们使用deque的非递归实现
 import collections
-def isChangeOnce(cur,next):
+def isChangeOnce(cur,next):#时间复杂度是O(K),K是bank中字符的长度
     changes = 0
     for i in range(len(next)):
         if next[i]==cur[i]:
@@ -68,21 +68,39 @@ def isChangeOnce(cur,next):
 class Solution(object):
     def minMutation(self, start, end, bank):
         """
+        对于每一个节点都要去找与它只相差一个的元素list，然后与这个list中所有元素进行比较，然后继续去找相差1的元素
+        时间复杂度是O(N)*O(N)*O(K)*
         :type start: str
         :type end: str
         :type bank: List[str]
         :rtype: int
         """
-        quene = collections.deque()
-        quene.append((start,start,0))#cur,pre,steps
-        while quene:
-            cur,pre,steps = quene.popleft()
+        # quene = collections.deque()
+        # quene.append((start,start,0))#cur,pre,steps
+        # while quene:
+        #     cur,pre,steps = quene.popleft()
+        #     if cur == end:
+        #         return steps
+        #     for gene in bank:#bank长度
+        #         if isChangeOnce(cur,gene) and gene != pre:
+        #             quene.append((gene,cur,steps+1))
+        # return -1
+        queue = []
+        queue.append((start, 0))
+        visited = set(bank)
+        while queue:
+            cur, step = queue.pop(0)
             if cur == end:
-                return steps
-            for gene in bank:
-                if isChangeOnce(cur,gene) and gene != pre:
-                    quene.append((gene,cur,steps+1))
+                return step
+            for i in range(len(cur)):
+                for c in "AGCT":  #
+                    mutation = cur[:i] + c + cur[i + 1:]  # 列举出所有可能的变化为1的基因串
+                    if mutation in visited:
+                        visited.remove(mutation)
+                        queue.append((mutation, step + 1))
         return -1
+
+
 
 # 2.DFS 回溯
 from typing import List

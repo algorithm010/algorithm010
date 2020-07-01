@@ -163,3 +163,28 @@ class Solution:
             row = [kid for node in row for kid in (node.left, node.right) if kid]
         return maxes
 ```
+
+
+#### 两个栈实现队列
+主要是要考虑从队首删除元素的情形
+```angular2html
+class CQueue(object):
+    def __init__(self):
+        self.in_stack, self.out_stack = [],[]
+
+    def appendTail(self, value):
+        self.in_stack.append(value)
+
+    def deleteHead(self):
+        """
+        删除的时候有几点要考虑，
+        1.如果out_stack中有元素，说明是上一次删除没有删除完的，最优先删除
+        2.如果out_stack中元素全部删除后，in_stack中没有元素，则无法删除返回-1
+        3.如果in_stack中有元素，将其全部转移到out_stack中，返回pop()值
+        """
+        if self.out_stack: return self.out_stack.pop()
+        if not self.in_stack: return -1
+        while self.in_stack:
+            self.out_stack.append(self.in_stack.pop())
+        return self.out_stack.pop()
+```
