@@ -238,7 +238,7 @@ def postorderTraversal(self, root):
             stack1.append(node.left)
         if node.right:
             stack1.append(node.right)
-        stack2.append(node)
+        stack2.append(node.val)
     return stack2[::-1]
 ```
 
