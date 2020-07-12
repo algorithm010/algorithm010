@@ -51,7 +51,41 @@ class Solution:
             else:
                 left = pivot + 1  # 不 +1 会陷入死循环
         return arr[:k]
-s = Solution()
-nums = [1, 4, 2, 5, 10, 3, -1]
-res = s.getLeastNumbers(nums,2)
+
+
+
+import heapq
+
+class SolutionII:
+    #如果 是要求最小的k个数，那么应该是维护一个大小为k的大根堆，如果元素值小于堆顶元素，
+    # 将此元素放到数组末尾，进行heapify，那么每次就相当于将原始数组中的大数全部推出，只留下最后k个，那他就是最小值
+    # 判断当前元素是否小于堆顶元素，如果小，就入堆
+
+    # 同理 如果要求最大的k个数，那么就需要维护小根堆，一致删除较小的元素，直到元素组只剩k个值，就是最大的k个数
+    # 但是由于python中的heapq是小根堆，所以我们在维护堆之前先将符号调换一下
+    # 小根堆 如果当前值大于堆顶元素 才能入堆
+    def getLeastNumbers(self, nums, k):
+        if k == 0: return []
+        my_heap = [-x for x in nums[:k]]
+        heapq.heapify(my_heap)
+        for i in range(k,len(nums)):
+            if -nums[i] > my_heap[0]:#小根堆最后留下的是最大的k个值，所以只有大于堆顶才能进
+                heapq.heappop(my_heap)
+                heapq.heappush(my_heap,-nums[i])
+        res = [-x for x in my_heap]
+        return res
+
+        # heapq.heapify(my_heap)#维护大小为k的小根堆
+        # for i in range(k,len(nums)):
+        #     if nums[i] < my_heap[-1]:#如果比栈顶元素小，将当前栈顶元素
+
+
+
+
+
+
+s = SolutionII()
+# nums = [1, 4, 2, 5, 10, 3, -1]
+nums = [0,0,1,2,4,2,2,3,1,4]
+res = s.getLeastNumbers(nums,8)
 print(res)
