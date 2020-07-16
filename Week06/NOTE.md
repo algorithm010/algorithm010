@@ -188,6 +188,98 @@ class Solution:
         return cur_max
 ```
 
+#### 买卖股票的最佳时机I
+1.暴力解法 枚举每第i天买第j天抛除的所有可能，记录并返回最大值 (感觉是动态规划的一种)   
+```python
+from typing import List
+class Solution:
+    # 只能买卖一次
+    def maxProfit(self, prices: List[int]) -> int:
+        # 暴力法 O(N^2)枚举第i天买入第j天卖出，记录最大值
+        res = 0
+        for i in range(len(prices)-1):
+            for j in range(i+1,len(prices)):
+                res = max(res,prices[j]-prices[i])
+        return res
+``` 
+2.动态规划 累计到第i天的最大收益为 第i-1天的最大收益值 和 第i天股票价格与当前历史最低股价差值 之间的最大值  
+```python
+from typing import List
+class Solution:
+    # 只能买卖一次
+    def maxProfit(self, prices: List[int]) -> int:
+        if not prices: return 0
+        dp = [0] * len(prices)
+        lowest = prices[0]
+        for i in range(1, len(prices)):
+            if prices[i] < lowest:
+                lowest = prices[i]
+            dp[i] = max(dp[i - 1], prices[i] - lowest)#状态转移只与前一个状态有关
+        return dp[-1]
+```
+3. 看到labuladong的题解，里面对空间降维有这样一句描述 由于状态转化过程仅与前一个状态相关，所以可以用变量来存储  
+对程序稍作修改，第一次难免会犯错  
+```python
+from typing import List
+class Solution:
+    # 只能买卖一次
+    def maxProfit(self, prices: List[int]) -> int:
+        pre, cur, lowest = 0,0,prices[0]
+        for i in range(len(prices)):
+            if prices[i] < lowest:
+              lowest = prices[i]
+            cur = max(cur,prices[i]-lowest)
+            # pre, cur = cur, max(cur, prices[i]-lowest)
+            print(pre,cur)
+        # return max(cur,pre)
+        return cur
+```
+刚开始就想着那就拿两个数来存咯，然后在返回结果的时候就发现cur并不是最大的 打印pre，cur才知道转移过程写错了  
+思考后，发现两个状态转移，一个变量就搞定了 所以有了上面的最终代码  
+
+#### 买卖股票的最佳时机II 可以买卖股票多次
+由于没有对买卖次数进行限制，我们可以找到股票图里所有上升段进行求和  
+```python
+from typing import List
+class Solution:
+    #可以买卖K次
+    def maxProfit(self, prices: List[int]) -> int:
+        if not prices: return 0
+        res = 0
+        for i in range(1,len(prices)):
+            if prices[i] > prices[i-1]:
+                res += prices[i] - prices[i-1]
+        return res
+```
+#### 买卖股票的最佳时机III 只能买卖两次
+考虑用二维数组做，dp[i][0,1,2,3]表示到i天买卖0-3次时 最大收益，这样定义状态的原因是因为限定了k=2，所以只有五种状态(原始状态+1)  
+```python
+from typing import List
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        if not prices: return 0
+        #0未买入 1 买入一次 2 卖出一次 3 买入两次 4 卖出2次
+        # dp = [[0]*len(prices) for _ in range(2*2+1)]
+        dp = [[0]*5 for _ in range(len(prices))]
+        dp[0][0] = dp[0][2] = dp[0][4] = 0
+        dp[0][1] = dp[0][3] = -prices[0]
+        for i in range(1,len(prices)):
+            dp[i][0] = 0 #如果第i天没有买入，那么只可能i-1天没有买入
+            #第i天买入一次，可能是i-1天未买i天买 或 第i-1天买i未买
+            dp[i][1] = max(dp[i-1][1], dp[i-1][0] - prices[i])
+            #第i天买入一次卖出一次，可能是i-1天买入i天卖出或者i-1天已经买入卖出了
+            dp[i][2] = max(dp[i-1][2], dp[i-1][1] + prices[i])
+            #第i天买入2次卖出1次，可能是i-1买卖(1,1)次，i天买入；也可能是是i-1天已经买卖(2,1)次
+            dp[i][3] = max(dp[i-1][3], dp[i-1][2] - prices[i])
+            # 第i天买卖(2,2)可能是i-1天买卖(2,2)也可能是i-1天买卖(2,1)，i卖出
+            dp[i][4] = max(dp[i-1][4], dp[i-1][3] + prices[i])
+        #最后手头没有股票剩余，实际收益最高
+        return dp[-1][4]
+```
+很自然的看出，每一种状态的转移有着高度的相似性，我们考虑降维
+
+
+
 
 
 
