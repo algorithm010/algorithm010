@@ -277,7 +277,53 @@ class Solution:
         return dp[-1][4]
 ```
 很自然的看出，每一种状态的转移有着高度的相似性，我们考虑降维
+很显然这个状态转移，只与前一天相同状态dp[i-1][k]和前一天不同状态dp[i-1][k-1]有关，那么我们就能简化上述过程。
+【刚开始我也是去找别人的代码，发现状态转移稀奇古怪，】
+【要么是 对状态转移方程中对dp[i][1]和dp[i][3]做min操作，要么是做一些不直观的额外处理】
+【我想，既然是简化，那么状态转移过程应该与上述代码高度一致】
+【而不应该是在简化的状态转移方程中对dp[i][1]和dp[i][3]做min操作，也不应该做过多的边界处理】
+【按自己的思路对照上述方程，得如下】
+```
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        in_1,in_2 = float('-inf'),float('-inf')
+        out_1,out_2 = 0,0
+        for p in prices:
+            in_1 = max(in_1,-p)
+            out_1 = max(out_1, in_1 + p)
+            in_2 = max(in_2,out_1 - p)
+            out_2 = max(out_2, in_2 + p)
+        return out_2
+```
+【我做题的时候就最烦我的思路和别人不一样，要改弦更张，记忆的细节就更多了】
+【你看，现在是不是与前面的逻辑一毛一样，方便记忆】
+但是对于后面k很大，比如就是三的时候，刚开始的思路是正确，但是就要写很多，这道题我还没做，做的时候再考虑该怎么处理~
 
+#### 买卖股票的最佳时机IV
+```python
+from typing import List
+class Solution:
+    def maxProfit(self, k: int, prices: List[int]) -> int:
+        def no_limit(prices):
+            res = 0
+            for i in range(1, len(prices)):
+                if prices[i] > prices[i - 1]:
+                    res += prices[i] - prices[i - 1]
+            return res
+        size = len(prices)
+        if k > size / 2:
+            return no_limit(prices)
+        dp = [[[0] * 2 for _ in range(k + 1)] for _ in range(size)]
+        for i in range(size):
+            for j in range(1, k + 1):
+                if i == 0:
+                    dp[i][j][0] = 0
+                    dp[i][j][1] = -prices[i]
+                else:
+                    dp[i][j][0] = max(dp[i-1][j][0],dp[i-1][j][1] + prices[i])#前一天持有并卖掉
+                    dp[i][j][1] = max(dp[i-1][j][1],dp[i-1][j-1][0] - prices[i])#前一天不持有，并买入
+        return dp[size - 1][k][0]
+```
 
 
 
