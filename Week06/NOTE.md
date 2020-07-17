@@ -276,13 +276,13 @@ class Solution:
         #最后手头没有股票剩余，实际收益最高
         return dp[-1][4]
 ```
-很自然的看出，每一种状态的转移有着高度的相似性，我们考虑降维
-很显然这个状态转移，只与前一天相同状态dp[i-1][k]和前一天不同状态dp[i-1][k-1]有关，那么我们就能简化上述过程。
-【刚开始我也是去找别人的代码，发现状态转移稀奇古怪，】
-【要么是 对状态转移方程中对dp[i][1]和dp[i][3]做min操作，要么是做一些不直观的额外处理】
-【我想，既然是简化，那么状态转移过程应该与上述代码高度一致】
-【而不应该是在简化的状态转移方程中对dp[i][1]和dp[i][3]做min操作，也不应该做过多的边界处理】
-【按自己的思路对照上述方程，得如下】
+很自然的看出，每一种状态的转移有着高度的相似性，我们考虑降维  
+很显然这个状态转移，只与前一天相同状态dp[i-1][k]和前一天不同状态dp[i-1][k-1]有关，那么我们就能简化上述过程。  
+【刚开始我也是去找别人的代码，发现状态转移稀奇古怪，】  
+【要么是 对状态转移方程中对dp[i][1]和dp[i][3]做min操作，要么是做一些不直观的额外处理】  
+【我想，既然是简化，那么状态转移过程应该与上述代码高度一致】  
+【而不应该是在简化的状态转移方程中对dp[i][1]和dp[i][3]做min操作，也不应该做过多的边界处理】  
+【按自己的思路对照上述方程，得如下】  
 ```
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
@@ -295,9 +295,9 @@ class Solution:
             out_2 = max(out_2, in_2 + p)
         return out_2
 ```
-【我做题的时候就最烦我的思路和别人不一样，要改弦更张，记忆的细节就更多了】
-【你看，现在是不是与前面的逻辑一毛一样，方便记忆】
-但是对于后面k很大，比如就是三的时候，刚开始的思路是正确，但是就要写很多，这道题我还没做，做的时候再考虑该怎么处理~
+【我做题的时候就最烦我的思路和别人不一样，要改弦更张，记忆的细节就更多了】  
+【你看，现在是不是与前面的逻辑一毛一样，方便记忆】  
+但是对于后面k很大，比如就是三的时候，刚开始的思路是正确，但是就要写很多，这道题我还没做，做的时候再考虑该怎么处理~  
 
 #### 买卖股票的最佳时机IV
 ```python
@@ -324,6 +324,66 @@ class Solution:
                     dp[i][j][1] = max(dp[i-1][j][1],dp[i-1][j-1][0] - prices[i])#前一天不持有，并买入
         return dp[size - 1][k][0]
 ```
+
+#### 买卖股票的最佳时机V 冷冻期
+实际上与前三题没什么不同，只是比第四题操作少一些，我们还是定义可能存在的状态  
+```python
+from typing import List
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        # dp[i][0,1,2,3] 初始状态、买入、卖出、冷冻期
+        # dp[i][0] = 0
+        # dp[i][1] = max(dp[i-1][1],dp[i-1][0] -p)
+        # dp[i][2] = max(dp[i-1][2],dp[i-1][1] + p)
+        # dp[i][3] = max(dp[i-1][3],dp[i-1][2])#要么是之前已经闲置，要么是正在闲置-->可以和初始状态合并
+        if not prices: return 0
+        dp = [[0]*3 for _ in range(len(prices))]
+        dp[0][0], dp[0][1], dp[0][2] = 0, -prices[0], 0
+        for i in range(1,len(prices)):
+            dp[i][0] = max(dp[i-1][0],dp[i-1][2])
+            dp[i][1] = max(dp[i-1][1],dp[i-1][0] - prices[i])
+            dp[i][2] = max(dp[i-1][2],dp[i-1][1] + prices[i])
+        return dp[-1][2]
+```
+老样子，降维 但是直接降维会出错，要加中间状态  
+```python
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        if not prices: return 0
+            keep, in1, out1 = 0, -prices[0], 0
+            for price in prices:
+                new_keep = max(keep,out1)
+                new_in1 = max(in1,keep-price)
+                new_out1 = max(out1,in1+price)
+                keep,in1,out1 = new_keep,new_in1,new_out1
+            return out1
+```
+
+#### 买卖股票的最佳时机VI 手续费
+```python
+class Solution:
+    def maxProfit(self, prices: List[int], fee: int) -> int:
+        # dp[i][0],dp[i][1] 买入的最大值，卖出的最大值 
+        dp = [[0,0] for _ in  range(len(prices))]
+        dp[0][0],dp[0][1] = -prices[0] - fee,0
+        # 每笔交易你只需要为支付一次手续费, 可以在买入的时候付，也可以在卖出的时候付，这里在买入的时候付
+        for i in range(1,len(prices)):
+            dp[i][0] = max(dp[i-1][0] , dp[i-1][1] - prices[i] - fee)#持股
+            dp[i][1] = max(dp[i-1][1], dp[i-1][0] + prices[i])#不持股
+        return dp[-1][1]
+```
+降维  
+```python
+class Solution:
+    def maxProfit(self, prices: List[int], fee: int) -> int:
+        in1, out1 = -prices[0] - fee, 0#在买入的时候付费
+        for price in prices:
+            in1 = max(in1, out1-price-fee)
+            out1 = max(out1, in1 + price)
+        return out1
+```
+
+
 
 
 
