@@ -8,7 +8,7 @@
 return sorted(s) == sorted(t)
 ```
 2.根据两个字符串构建hash表，判断两个hash表是否一致  
-```angular2html
+```python
 dic1, dic2 = {}, {}
 for item in s:
     dic1[item] = dic1.get(item, 0) + 1
@@ -19,7 +19,7 @@ return dic1 == dic2
 ```
 3.只需要使用一个hash表，前一次遍历增加值，后一次遍历减少值  
 最后判断hash表中的值是否为0
-```angular2html
+```python
 if len(s) != len(t): return False
 hashmap = {}
 for substr in s:
@@ -40,7 +40,7 @@ return True
 ```
 4.使用python内置的count函数，统计字符出现的个数 原理与方法2一致
 
-```angular2html
+```python
 if len(s) != len(t):
     return False
 for i in set(s):
@@ -49,7 +49,7 @@ for i in set(s):
 return True
 ```
 优化
-```angular2html
+```python
 
 if len(s)!=len(t):return False
 tmp = set(s)
@@ -65,7 +65,7 @@ return False
 1.由于异位词都是由相同字母集组成的，可以在遍历列表时，根据其字母排序是否一致，作为异位词分组的根据  
 具体的 根据字母排序是否一致，构建hash表，以字母排序作为key(当然也可以使用字母的tuple序)，以原字符串作为键  
 由于涉及到排序 所以时间复杂度为O(NKlogK),空间复杂度为O(NK)
-```angular2html
+```python
 dic = {}
 for item in strs:
     # key = tuple(sorted(item))#字母的键也可以用字母排序对应的tuple
@@ -80,7 +80,7 @@ return [dic[x] for x in dic]#击败97%
 这种写法很直观，但是判断当前字符是否存在hash表中，有简简洁写法  
 dict.get()获取不到时，返回[]   
 获取到时 + [item]可以直接在原list中拼接  
-```angular2html
+```python
 dic = {}
 for item in strs:
     key = ''.join((sorted(item)))
@@ -98,7 +98,7 @@ return [dic[item] for item in dic]
 2.根据字符串中字符出现的次数作为hash表的键  
 对于每次遍历到的字符串，都需要维护一个长度为26的list，并要将其转化为tuple  
 时间复杂度是O(NK),空间复杂度为O(NK)
-```angular2html
+```python
 dic = {}
 for item in strs:
     count = [0] * 26
@@ -109,7 +109,7 @@ for item in strs:
 return [dic[x] for x in dic]
 ```
 对应的defaultdict实现如下
-```angular2html
+```python
 dic = collections.defaultdict(list)
 for item in strs:
     count = [0] * 26
@@ -121,11 +121,11 @@ return [dic[x] for x in dic]
 
 ### 二叉树的深度优先遍历
 递归实现都比较简单，也比较容易理解，不赘述
- 
+
 #### 二叉树的前序遍历 根左右
 
 1.递归实现
-```angular2html
+```python
 def preorderTraversal(self, root: TreeNode) -> List[int]:
     res = []
     if root:
@@ -147,7 +147,7 @@ def preorder(self, root, res):  # 前序遍历 根左右
 然后判断其左右子节点是否存在，并对他们进行入栈操作  
 最后返回res
 
-```angular2html
+```python
 def preorderTraversal(self, root: TreeNode) -> List[int]:
     # 前序遍历的迭代实现
     if root is None: return []
@@ -167,7 +167,7 @@ def preorderTraversal(self, root: TreeNode) -> List[int]:
 
 #### 二叉树的中序遍历 左根右
 1.递归实现
-```angular2html
+```python
 def inorderTraversal(self, root):
     """
     #中序遍历 左根右
@@ -191,7 +191,7 @@ def inorder(self, root, res):
 中序遍历的非递归实现就复杂一些了，因为每次并不是先将根节点的值输出，而是优先的找到树的最左子树  
 所以要确保能一直往最左节点找 同时入栈 如果已经找到最左节点，  
 那么首先应当将这个元素出栈存入res中 其次应判断当前栈顶元素是是否有右孩子 将cur指向栈顶元素的右孩子  
-```angular2html
+```python
 def inorderTraversal(self, root: TreeNode) -> List[int]:
     if root is None: return []
     res, stack = [], []
@@ -208,7 +208,7 @@ def inorderTraversal(self, root: TreeNode) -> List[int]:
 
 #### 二叉树的后序遍历 左右根
 1.递归实现
-```angular2html
+```python
 def postorderTraversal(self,root):
     res = []
     if root is not None:
@@ -226,7 +226,7 @@ def postorder(self,root,res):
 后续遍历的非递归方式应该是最难的，因为在入栈过程中还需要额外的指针标识是否已经访问过左子树的右孩子节点  
 这里取巧使用两个栈，根节点不用在一个单独的栈中出入并用指针记录访问元素  
 
-```angular2html
+```python
 def postorderTraversal(self, root):
     #用两个栈实现后序遍历的非递归实现
     if root is None:
@@ -244,7 +244,7 @@ def postorderTraversal(self, root):
 
 #### 二叉树的层序遍历
 写着写着，才发现二叉树的层序遍历和我上面后序遍历是真的像
-```angular2html
+```python
 class Solution(object):
     def levelTraversal(self,root):
         if root is None:
@@ -264,7 +264,7 @@ class Solution(object):
 #### N叉树的层序遍历
 刚开始是这么写的，看起来算法逻辑没什么问题，但是这里我相当于是将cur当做一个list在做  
 而实际上cur只是一个Node，哪怕它是root.children它也是个Node，所以没法将其进行迭代  
-```angular2html
+```python
 def levelOrder(self, root: 'Node') -> List[List[int]]:
         if root is None: return []
         quene,res = [root],[]
@@ -285,7 +285,7 @@ def levelOrder(self, root: 'Node') -> List[List[int]]:
 每次都将quene所有元素记录到tmp中，将所有节点合并为list之后存入res  
 同时，在加入的过程中，用tmp_quene记录下一层的节点值，  
 在遍历完上层节点后，将下层节点赋给quene
-```angular2html
+```python
 def levelOrder(self,root):
     #击败55%
     if root is None: return []
@@ -305,7 +305,7 @@ def levelOrder(self,root):
 
 #### 数组中最小的k个数
 1.暴力解法 对数组进行排序，返回前k个
-```angular2html
+```python
 arr.sort()
 return arr[:k]
 ```
@@ -323,7 +323,7 @@ res = [-x for x in heap]
 return res
 ```
 3.快排思想
-```angular2html
+```python
 def partition(self, nums, left, right):
     pivot = nums[left]
     while left < right:
@@ -361,7 +361,7 @@ def getLeastNumbers(self, arr: List[int], k: int) -> List[int]:
 对于有节点值交换的情形 进一步考量它的下一层是否符合小根堆或大根堆的条件  
 建堆之后 堆顶的元素应该是最大的(大根堆)，此时将它与末尾元素调换就会使得最大元素到最后位置，对现今的堆顶元素进行堆化  
 这个过程就完成了对一个元素的排序，目前堆中的最大元素已经到了末尾，下一次进行调整时就无须再处理此元素  
-```angular2html
+```python
 
 #时间复杂度为NlogN，logN为建立大根堆/小根堆的时间复杂度，
 #heapify的时间复杂度是O(logN)的因为，最坏情况下，每一层都需要判断
@@ -393,7 +393,7 @@ def heap_sort(self,nums):
 
 #### 判断是否是丑数
 如果一个数是丑数那肯定满足这种定义num = 2^i*3^j*5^k
-```angular2html
+```python
 if num == 0: return False
 while num % 5 == 0: num /= 5
 while num % 3 == 0: num /= 3
@@ -412,7 +412,7 @@ for item in [2,3,5]:
 #### 求第n个丑数
 动态规划的题，解法分 动态转移方程和动态转移矩阵
 后面整理一套解法
-```angular2html
+```python
 # 1、2、3、5、4、6、8、9、10
 if n==0:
     return 0
@@ -428,7 +428,7 @@ return res[-1]
 
 #### 验证字符串是否是回文串
 1.翻转字符串 看是否相同 击败81%
-```angular2html
+```python
 tmp = "".join(char.lower() for char in s if ch.isalnum())
 return tmp == tmp[::-1]
 ```
@@ -447,7 +447,7 @@ return True
 #### 正则表达式匹配
 1.递归解法  
 是超出时间限制的，时间复杂度是O(3^N)
-```angular2html
+```python
 def isMatch(self, s: str, pattern: str) -> bool:
     # 特殊情况处理
     if len(s) == 0 and len(pattern) == 0: return True
@@ -470,7 +470,7 @@ def isMatch(self, s: str, pattern: str) -> bool:
 ```
 python中有装饰器优化迭代过程@lru_cache  
 所以在函数前使用装饰器即可通过
-```angular2html
+```python
 @lru_cache
 def isMatch(self, s: str, pattern: str) -> bool:
     pass
@@ -485,7 +485,7 @@ else:
     return match_first and self.isMatch(s[1:], pattern[1:])
 ```
 2.动态规划
-```angular2html
+```python
 pass
 ```
 
@@ -493,7 +493,7 @@ pass
 #### 只出现一次的数字 时间复杂度为O(N)，空间复杂度为O(N)
 除一个数外，所有元素都出现了两次，求这个只出现一次的元素
 1.两次hash表 遍历list，用hash表统计每个值出现的次数，根据出现次数返回key
-```angular2html
+```python
 # 1.hash表记录出现次数，以num为key，以出现次数为value 击败42%
 dic = {}
 for num in nums:
@@ -503,7 +503,7 @@ for key, value in dic.items():
         return key
 ```
 2.题目要求用常数级的空间复杂度实现，则不能用hash表实现
-```angular2html
+```python
 #位运算，击败97%
 # 由于每个元素都出现了两次，根据异或运算可以消去这两个元素
 #最后保留的就是带求值key和初始值1的异或
@@ -515,19 +515,19 @@ return res
 
 #### 只出现一次的数字II
 1. 数学计算
-```angular2html
+```python
 tmp = set(nums)
 return (3*sum(tmp) - sum(nums))//2
 ```
 给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现了三次。找出那个只出现了一次的元素。  
 1.python解法 使用count函数 但是count函数本身的时间复杂度就是O(N)的，导致算法时间复杂度是O(N^2)
-```angular2html
+```python
 for num in nums:
     if nums.count(num)==1:
         return num
 ```
 对应的优化是采用collections中的Counter模块
-```angular2html
+```python
 from collections import Counter
 dic = Counter(nums)
 for key in dic.keys():
@@ -535,7 +535,7 @@ for key in dic.keys():
         return key
 ```
 2.hash表法 通用解
-```angular2html
+```python
 dic = {}
 for num in nums:
     dic[num] = dic.get(num,0)+1
@@ -547,7 +547,7 @@ for key, value in dic.items():
 1x1x1->1 1->0，这个数可以出现0次、1次、2次，需要两位来表示其状态  
 构造真值表 写出逻辑表达式 并化简  
 参考连接[电路逻辑通俗解](https://leetcode-cn.com/problems/single-number-ii/solution/luo-ji-dian-lu-jiao-du-xiang-xi-fen-xi-gai-ti-si-l/)
-```angular2html
+```python
 x,y = 0,0
 for z in nums:
     tmp = ~x&(y^z)
@@ -556,7 +556,7 @@ for z in nums:
 return y
 ```
 根据两个表达式同构的性质，可以优化更新x的逻辑表达式
-```angular2html
+```python
 x, y = 0, 0
 for num in nums:#num means input
     y = ~x & (y^num)
@@ -566,14 +566,14 @@ return y
 
 #### 只出现一次的数字III
 1.使用Counter
-```angular2html
+```python
 from collections import Counter #{'num':count}
 dic = Counter(nums)
 return [key for key in dic if dic[key]==1 ]
 ```
 给定一个整数数组 nums，其中恰好有两个元素只出现一次，其余所有元素均出现两次。 找出只出现一次的那两个元素。  
 2.hash表法
-```angular2html
+```python
 dic,res = {}, []
 for num in nums:
     dic[num] = dic.get(num,0) + 1
@@ -585,7 +585,7 @@ return res
 3.接上一题的思路，如果对这些元素进行异或，得到的结果就是待求元素的异或值，如何从结果中分离这两个元素呢？  
 异或得到的结果不能直接分离出待求元素，但是我们可以根据这个异或值的第一个1将原数组分类，  
 由于其余元素都是出现两次的，所以对这两个数组分别求异或即可得到结果。
-```angular2html
+```python
 tmp = 0
 for num in nums:
     tmp ^= num
@@ -612,7 +612,7 @@ return res
 
 ```
 上面的方式可以优化，其一，找第一位不同，第二，不需要用数组存放元素，直接根据此位是否为1，直接进行计算
-```angular2html
+```python
 tmp= 0
 for num in nums:
     tmp ^= num
@@ -630,7 +630,7 @@ return [x, tmp^x]#tmp是两个数的异或值，一个值已经找到了
 路径： 左->中->再上  
       左->中  
       左->中->右    
-```angular2html
+```python
 class TreeNode:
     def __init__(self, x):
         self.val = x
