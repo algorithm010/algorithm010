@@ -87,25 +87,19 @@ class Solution:
 class SolutionI:
     #哨兵优化 击败73%
     def largestRectangleArea(self, heights: List[int]) -> int:
-        max_area = 0
-        heights = [0]+heights+[0]
-        stack = [0]
-        for i in range(len(heights)):
-            while heights[i] < heights[stack[-1]]:#如果当前高度小，就可以确定以上一个height为高的最大面积
-                cur_height = heights[stack.pop()]#此时计算高度为前一个height的值
-                cur_width = i - stack[-1] - 1
-                max_area = max(max_area, cur_height*cur_width)
+        heights = [0] + heights + [0]
+        size = len(heights)
+        stack, res = [], 0
+        for i in range(size):
+            while len(stack) > 0 and heights[i] < heights[stack.pop()]:
+                cur_height = heights[stack.pop()]
+                res = max(res, cur_height * (i - stack[-1] - 1))
             stack.append(i)
-        return max_area
-
-
-
-
-
+        return res
 
 
 # leetcode submit region end(Prohibit modification and deletion)
 
-s = SolutionI()
+s = Solution()
 res = s.largestRectangleArea([2,1,5,6,2,3])
 print(res)
