@@ -6,10 +6,10 @@
 1.递归
 我刚开始的想法是，考虑左右孩子节点，这个连接指向修改了就好了  
 然后写的代码如下
-```angular2html
+```python
 def invertTree(self, root: TreeNode) -> TreeNode:
     #recursive terminator
-    if root is None: return 
+    if root is None: return
     #current process
     if root.right:
         root.left = self.invertTree(root.right)
@@ -21,7 +21,7 @@ def invertTree(self, root: TreeNode) -> TreeNode:
 ```
 上述代码的问题在于，if root.right:执行过后，左孩子已经修改了；在想要执行if root.left:时已经是同一个指向了  
 所以需要修改
-```angular2html
+```python
 def invertTree(self, root: TreeNode) -> TreeNode:
     # recursive terminator
     #击败70%
@@ -38,7 +38,7 @@ def invertTree(self, root: TreeNode) -> TreeNode:
 ```
 2.迭代 类似层序遍历，将每一层访问到的节点存到quene中  
 如果quene不为空，取出队尾元素 对于当前节点，交换左右孩子后，将其添加到quene中，继续进行判断
-```angular2html
+```python
 def invertTree(self, root: TreeNode) -> TreeNode:
     if root is None: return None
     quene = [root]
@@ -52,7 +52,7 @@ def invertTree(self, root: TreeNode) -> TreeNode:
 
 #### 验证是否搜索二叉树
 1.递归，判断左子树是否小于根，右子树是否大于根
-```angular2html
+```python
 if root is None: return True
 #确定左子树是否符合排序二叉树，如果不满足，就返回False
 if not self.isValidBST(root.left): return False
@@ -62,7 +62,7 @@ self.pre_val = root.val#记录上一个访问的节点的值
 return self.isValidBST(root.right)
 ```
 2.迭代 由于二叉搜索树的特性 中序遍历比较方便 这里就借用二叉树的中序遍历的非递归实现完成
-```angular2html
+```python
 stack, pre_val = [], float('-inf')
 cur = root
 while stack or cur is not None:
@@ -77,14 +77,14 @@ return True
 ```
 
 #### 二叉树的最大深度
-1.递归代码 这个代码我真的印象超级深 
-```angular2html
+1.递归代码 这个代码我真的印象超级深
+```python
 if root is None: return 0
 return max(self.maxDepth(root.left),self.maxDepth(root.right))+1
 ```
 2.迭代 借助DFS思想，借助栈，每次入栈时 记录当前节点的深度  
 将遍历左右孩子时，将节点和当前深度+1压入栈中
-```angular2html
+```python
 if root is None: return 0
 stack = [(1, root)]#栈中记录当前节点和此时的高度
 depth = 0
@@ -96,11 +96,23 @@ while stack != []:
         stack.append((current_depth + 1, root.right))
 return depth
 ```
+上述代码可以优化  
+``` python
+    quene, depth = [root], 0
+    while quene:
+        # cur_layer = []
+        for _ in range(len(quene)):
+            root = quene.pop(0)#要确保将这一层的元素加入到quene中
+            if root.left: quene.append(root.left)
+            if root.right: quene.append(root.right)
+        depth += 1
+    return depth
+```
 
 #### 二叉树的最小深度
 最小深度是从根节点到最近叶子节点的最短路径上的节点数量  
 1.递归 递归时需要弄清楚递归的结束条件
-```angular2html
+```python
 def minDepth(self, root: TreeNode) -> int:
     #1.根节点为空 return 0
     #2. 左右节点为空 return 1
@@ -111,10 +123,10 @@ def minDepth(self, root: TreeNode) -> int:
     left_height, right_height = self.minDepth(root.left),self.minDepth(root.right)
     if root.left is None or root.right is None:  return left_height+right_height+1#有一个为0
     #其余情况 返回较小值+1
-    return min(left_height,right_height)+1
+    return min(left_height,right_height) + 1#+1是加的根那一层
 ```
 2.借助层序遍历 不需要遍历所有节点 只需要遍历到第一个叶子节点就能返回
-```angular2html
+```python
 if not root: return 0
 quene = [(1, root)]
 while quene:
@@ -124,10 +136,22 @@ while quene:
     if root.left: quene.append((depth + 1, root.left))
     if root.right: quene.append((depth + 1, root.right))
 ```
+这里和上面最大深度逻辑一致，只要提前判断子树就可以返回深度了  
+``` python
+if not root: return 0
+quene, depth = [root], 1
+while quene:
+    for _ in range(len(quene)):
+        root = quene.pop(0)
+        if not root.left and not root.right: return depth#提前判断是否叶节点即可，由于depth是后加的，所以初值depth=1
+        if root.left: quene.append(root.left)
+        if root.right: quene.append(root.right)
+    depth += 1
+```
 
 #### 二进制求和
 1.进制转换后求解
-```angular2html
+```python
 return bin(int(a, 2)+int(b, 2))[2:]
 ```
 2. 如果不能使用加减乘除
@@ -144,7 +168,7 @@ return bin(x)[2:]
 
 #### 单词拆分
 1.动态规划 时间复杂度O(N^2),空间复杂度O(N)
-```angular2html
+```python
 #动态规划 用大小为len(s)+1的数组保存转态结果
 #dp[i]表示s的前i位是否能被worddict中的元素表示,最后只需要取转移数组的最后一位即可知道是否能够拆分
 #如何转移呢？
@@ -160,7 +184,7 @@ def wordBreak(self, s: str, wordDict: List[str]) -> bool:
     return dp[-1]
 ```
 2.备忘录回溯
-```angular2html
+```python
 #备忘录回溯
 def wordBreak(self, s: str, wordDict: List[str]) -> bool:
     import functools
@@ -182,7 +206,7 @@ def wordBreak(self, s: str, wordDict: List[str]) -> bool:
 如果当前的三数之和与target差值的绝对值 小于 abs(min_closer-tmp)，就将min_closer=tmp    
 如果小于target，left+1 如果大于target，right-1 如果=target就返回这个三数之和  
 遍历结束之后 没有返回 说明没有=target的组合 那么就返回记录的最接近的三数之和min_closer  
-```angular2html
+```python
 def threeSumClosest(self, nums: List[int], target: int) -> int:
     nums.sort()  # 先排序
     # [-4,-1,1,2],1
@@ -209,7 +233,7 @@ def threeSumClosest(self, nums: List[int], target: int) -> int:
 #### 最长回文子串
 1.暴力解法
 遍历出所有长度的子串，判断它是否是回文串，从结果中挑出最长的返回  时间复杂度是O(N^3)
-```angular2html
+```python
 def longestPalindrome(self, s: str) -> str:
     res,max_length = '',0
     for i in range(len(s)):
@@ -231,7 +255,7 @@ def isPalidrome(self,cur_string):
 ```
 2.动态规划
 动态规划是指 如果这一刻的状态是可以由其他时刻的状态推导出来，那么我们可以记录该时刻的状态以推导此刻的状态  
-```angular2html
+```python
 #首先 长度为0、1的字符串 它是回文串
 #长度=2，判断左右是否相同
 #对于strs[i,j]而言它是否是回文串 取决于它内缩2位的字符串是否是回文串同时还要判断其边界是否相同，=2也可划归此类    
@@ -264,8 +288,8 @@ def longestPalindrome(self, s: str) -> str:
 遍历二叉树有深度和广度，但是由于要重建二叉树，我们普通的遍历结果是连在一起的，无法确定None节点在哪里，  
 所以如果想要用一次遍历的结果推导出其二叉树的构型 需要为叶节点的孩子打上标记
 1.BFS 层序遍历实现
- - 1 序列化 层序遍历的二叉树 
- ```angular2html
+ - 1 序列化 层序遍历的二叉树
+ ```python
 def serialize(self, root):#层序遍历中使用deque是最简单的
     #手写一个二叉树的层寻遍历
     if not root: return []
@@ -281,7 +305,7 @@ def serialize(self, root):#层序遍历中使用deque是最简单的
         return res
 ```
  - 2 重建时，如果遍历到的元素是#，那我们就不对它进行处理
- ```angular2html
+ ```python
 def deserialize(self, data):
     if not data: return None
     data = data.split(',')
@@ -303,8 +327,8 @@ def deserialize(self, data):
 ```
 
 2.前序遍历 递归解
- - 1 序列化 前序遍历 
-```angular2html
+ - 1 序列化 前序遍历
+```python
 def serialize(self, root):
     #手写一个二叉树的层寻遍历
     if root == None: return '#,'
@@ -312,13 +336,13 @@ def serialize(self, root):
     rightserilized = self.serialize(root.right)
     return str(root.val) + ',' + leftserilized + rightserilized
 ```
- - 2 反序列化 
-```angular2html
+ - 2 反序列化
+```python
 def deserialize(self, data):
     data = data.split(',')
     root = self.deserializeCore(data)
     return root
-    
+
 def deserializeCore(self,data):
     root_val = data.pop(0)
     if root_val == '#': return None
@@ -331,7 +355,7 @@ def deserializeCore(self,data):
 #### 二叉树的最近公共祖先
 1.递归
 class Solution:
-```angular2html
+```python
 #1.递归 分析出找到最近公共祖先节点的情形，如果p，q由同一祖先节点 则p、q要么位于某棵树的左右子树
     #要么在同一棵树上，在同一棵树上又有 p或q为根 另外存在p或q在其左右子树中
     res = None
@@ -352,8 +376,8 @@ class Solution:
         #reverse states
         return root_left or root_right or(root.val==p.val or root.val==q.val)
 ```
-写的更简洁一点 
-```angular2html
+写的更简洁一点
+```python
 def lowestCommonAncestor(self, root, p, q):
     if not root or p==root or q==root:
         return root
@@ -365,7 +389,7 @@ def lowestCommonAncestor(self, root, p, q):
 ```
 
 2.记录父节点
-```angular2html
+```python
 class Solution:
     # ，然后我们就可以利用节点的父节点信息从p结点开始不断往上跳，并记录已经访问过的节点，再从q节点开始不断往上跳，如果碰到已经访问过的节点，那么这个节点就是我们要找的最近公共祖先。
     all_parents = {}
@@ -396,9 +420,9 @@ class Solution:
 #### 根据二叉树的前中序列重建二叉树
 手动模拟根据二叉树的前中序列生成二叉树的过程，不难发现每次都是先确定根节点，以根节点划分出左右子树  
 对应到两个序列，递归的进行确定根节点，左右子树序列  
-所以我们在重建时，先确定根节点、然后为其分配左右子树， 
+所以我们在重建时，先确定根节点、然后为其分配左右子树，
 处理左右子树时，先确定并对应其前中序列，进行相同的处理  
-```angular2html
+```python
 def buildTree(self, pre: List[int], inorder: List[int]) -> TreeNode:
     if not pre or not inorder:
         return None
@@ -412,8 +436,8 @@ def buildTree(self, pre: List[int], inorder: List[int]) -> TreeNode:
 
 #### 删除未排序链表中的重复元素
 1.使用set实现存储未重复元素，然后重建 (超时)尽管时间复杂度是O(N)，但是相当于遍历了两次
-```angular2html
-if head is None or head.next is None: return head 
+```python
+if head is None or head.next is None: return head
     once = set()
     while head is not None:
         if head.val not in once:
@@ -422,17 +446,17 @@ if head is None or head.next is None: return head
     head = pre = ListNode(None)
     while once:
         head.next = ListNode(once.pop())
-        head = head.next 
+        head = head.next
     return pre.next
 ```
 可以知道，如果当前元素已经出现过，那么如果遍历时记录了前一个指针，那么可以直接删除掉这个节点元素
-```angular2html
+```python
 if not head: return head
     once = {head.val}
     pre = head
     while head.next:#如果有下一个节点
         cur = head.next
-        if not cur.val in once: 
+        if not cur.val in once:
             once.add(cur.val)
             head = head.next
         else:#如果这个元素已经出现，那就直接删除掉
@@ -443,7 +467,7 @@ if not head: return head
 #### 括号生成
 1.因为括号类别已经确定，可以想象为左右括号最多N个
 左括号出现次数小于N即可,右括号小于左括号个数
-```angular2html
+```python
 def generateParenthesis(self,n):
     result = []
     self._generate_parenthesis(0, 0, n, '',result)
@@ -463,7 +487,7 @@ def _generate_parenthesis(self, left, right, n, res, result):
     # reverse state
 ```
 上面这种解法，由于最后要返回res，所以在递归时传入的参数较多，可以简化一下
-```angular2html
+```python
 def generateParenthesis(self,n):
     result = []
     def _generate_parenthesis( left, right, n, res):
@@ -480,7 +504,7 @@ def generateParenthesis(self,n):
 
 #### 组合
 碰到组合、全排列、括号生成这种打印类的题，一般都是 回溯算法，回溯算法有一个基本模板：
-```angular2html
+```python
 def backtracing(路径,可选路径)：
     #触发结束条件
     #for i in range():
@@ -491,7 +515,7 @@ def backtracing(路径,可选路径)：
 
 ```
 
-```angular2html
+```python
 def combine(self, n, k):
     def backtracing(first=1, tmp=[]):
         #触发结束条件
@@ -513,7 +537,7 @@ def combine(self, n, k):
 #### 组合II
 
 #### 全排列
-```angular2html
+```python
 def permute(self, nums: List[int]) -> List[List[int]]:
     def backtrace(nums, tmp):
         #触发结束条件
@@ -531,7 +555,7 @@ def permute(self, nums: List[int]) -> List[List[int]]:
 ```
 
 #### 全排列II
-```angular2html
+```python
 def permuteUnique(self, nums):
     """
     :type nums: List[int]
@@ -559,7 +583,7 @@ flag=False if n< 0 else True
 times,res = abs(n),1
 while times>0:
     res *= x
-    times -= 1 
+    times -= 1
 return res if flag else 1/res
 ```
 递归形式如下 但是都超出时间限制    
@@ -580,7 +604,7 @@ return self.myPow(x*x, n // 2) if n%2==0 else x*self.myPow(x, n-1)
 
 #### 子集
 1.递归
-```angular2html
+```python
 def subsets(self, nums: List[int]) -> List[List[int]]:
     res = [[]]
     for num in nums:
@@ -588,7 +612,7 @@ def subsets(self, nums: List[int]) -> List[List[int]]:
     return res
 ```
 2.回溯
-```angular2html
+```python
 def subsets(self, nums: List[int]) -> List[List[int]]:    
     def backtrack(first=0, tmp=[]):
     #处理结束条件
@@ -609,7 +633,7 @@ def subsets(self, nums: List[int]) -> List[List[int]]:
 
 ```
 3.位运算
-```angular2html
+```python
 def subsets(self, nums: List[int]) -> List[List[int]]:    
     size = len(nums)
     res = []
@@ -623,7 +647,7 @@ def subsets(self, nums: List[int]) -> List[List[int]]:
 
 #### 字符串相加
 手动模拟数字进位加法，如果两个数长度不一致，就在将其作为0处理
-```angular2html
+```python
 def addStrings(self, num1, num2):
     """
     :type num1: str
@@ -647,7 +671,7 @@ def addStrings(self, num1, num2):
 
 #### 长度最小的子数组
 1.枚举出长度为1,2,3...的数组，查看其值是否大于s，如果大于则可以直接返回 此时的枚举长度 但是时间复杂度高 O(N^2)
-```angular2html
+```python
 def minSubArrayLen(self, s, nums):
 # 1. 穷举 超出时间限制
     for i in range(1, len(nums) + 1):
@@ -662,7 +686,7 @@ def minSubArrayLen(self, s, nums):
 所以我们可以使用双指针 来界定是否是最短子数组
 双指针开始时指向 数组头 如果当前窗口和 小于s，end右移 以达到期望的s，如果此时已经到达s，记录下当前的窗口值  
 将当前窗口往右移动 继续判断窗口值与s的关系，如果小了，就右移end；如果还是大于s，窗口继续右移
-```angular2html
+```python
 def minSubArrayLen(self, s, nums):
     if not nums: return 0
     size, res = len(nums), len(nums) + 1
