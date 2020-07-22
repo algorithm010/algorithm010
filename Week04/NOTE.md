@@ -2,7 +2,7 @@
 
 #### 二叉树的层序遍历
 1.BFS 与一般的层序遍历相比 只是要求同一层的元素放在同一个[]中 需要对之前的模板进行改造
-```angular2html
+```python
 class TreeNode:
     def __init__(self, x):
         self.val = x
@@ -26,7 +26,7 @@ class Solution:
         return res
 ```
 2.DFS既然能够遍历整树的所有节点，如果需要按模板输出，需要在递归过程中记录当前树的深度，然后将该节点加入到res的对应部分
-```angular2html
+```python
 class Solution:
     def levelOrder(self, root: TreeNode) -> List[List[int]]:
         #如果用DFS做，当然也可以得到想要的结果，只是要注意的是，遍历过程中，需要记录该节点的深度
@@ -48,7 +48,7 @@ class Solution:
 
 #### 最小基因变化
 1.BFS
-```angular2html
+```python
 # 1.BFS 所谓BFS就是类似二叉树BFS我们使用deque的非递归实现
 import collections
 def isChangeOnce(cur,next):
@@ -80,7 +80,7 @@ class Solution(object):
 
 2.DFS 回溯法
 从bank中挑选出于cur只有一个bit差异且之前没有访问过的元素，先将其加入visited，继续判断此时的cur是否与target相同
-```angular2html
+```python
 rom typing import List
 class SolutionI:
     def minMutation(self, start: str, end: str, bank: List[str]) -> int:
@@ -103,10 +103,10 @@ class SolutionI:
         visited.add(start)
         dfs(start, 0)
         return self.res if self.res < float('inf') else -1
-``` 
+```
 
 #### 每个树行的最大值
-```angular2html
+```python
 class Solution(object):
     def largestValues(self, root):
         """
@@ -133,7 +133,7 @@ class Solution(object):
 ```
 其中，如果以后再遇到这样的判别  
 `if not root: return []`后面接`while`循环，就直接使用如下形式  
-```angular2html
+```python
 class Solution:
     def largestValues(self, root: TreeNode) -> List[int]:
         # if not root: return []
@@ -153,7 +153,7 @@ class Solution:
         return res
 ```
 最后给一段极简python代码  
-```angular2html
+```python
 class Solution:
     def largestValues(self, root: TreeNode) -> List[int]:
         maxes = []
@@ -167,7 +167,7 @@ class Solution:
 
 #### 两个栈实现队列
 主要是要考虑从队首删除元素的情形
-```angular2html
+```python
 class CQueue(object):
     def __init__(self):
         self.in_stack, self.out_stack = [],[]
@@ -204,7 +204,7 @@ class CQueue(object):
 
 #### 有序矩阵中的第K小的值
 1.暴力法 时间复杂度O(N^2)，空间复杂度O(N^2)
-```angular2html
+```python
 def kthSmallestI(self, matrix: List[List[int]], k: int) -> int:
     # 1.暴力法 时间复杂度O(N^2) 空间复杂度为O(N^2)
     tmp = [x for item in matrix for x in item]
@@ -212,7 +212,7 @@ def kthSmallestI(self, matrix: List[List[int]], k: int) -> int:
     return tmp[-(len(tmp) - k + 1)]
 ```
 2.借助小根堆 时间复杂度O(klogN)，空间复杂度O(N)
-```angular2html
+```python
 def kthSmallest(self, matrix: List[List[int]], k: int) -> int:
     size = len(matrix)
     pq = [(matrix[i][0],i,0) for i in range(size)]# 维护一个最小元素队列 (i,0) means location
@@ -225,7 +225,7 @@ def kthSmallest(self, matrix: List[List[int]], k: int) -> int:
     return heapq.heappop(pq)[0]
 ```
 3.双指针 时间复杂度O(Nlog(max-min))，空间复杂度O(1)
-```angular2html
+```python
 def kthSmallestII(self, matrix: List[List[int]], k: int) -> int:
     #双指针 时间复杂度O(Nlog(max-min))
     # n次双指针，每次判断矩阵左侧小于num的数的个数，大于k个则右指针已动到mid
