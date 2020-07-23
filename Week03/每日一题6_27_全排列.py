@@ -4,21 +4,6 @@
 
 from typing import List
 class Solution(object):
-    # def permute(self, nums):
-        # def backtracing(first=0):
-        #     if first == size:
-        #         result.append(nums[:])
-        #     for i in range(first, size):
-        #         nums[first], nums[i] = nums[i], nums[first]
-        #         backtracing(first+1)
-        #         nums[first], nums[i] = nums[i], nums[first]
-
-        # size = len(nums)
-        # result = []
-        # #l路径
-        # #选择列表 就是除去已经被加入到cur中的其余元素
-        # backtracing()
-        # return result
     # def permute(self,nums):
     #     res = []
     #     self.backtracing(res,nums,[])
@@ -53,8 +38,19 @@ class Solution(object):
 
 
 
+class SolutionII:
+    def permute(self, nums: List[int]) -> List[List[int]]:
+        def backtrace(nums,tmp):
+            if len(tmp) == size:
+                res.append(tmp[:])
+            for i in range(len(nums)):
+                backtrace(nums[:i]+nums[i+1:],tmp + [nums[i]])
+        res,size = [],len(nums)
+        backtrace(nums,[])
+        return res
 
-s = Solution()
+
+s = SolutionII()
 nums = [1,3,2]
 res = s.permute(nums)
 print(res)

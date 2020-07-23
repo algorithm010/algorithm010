@@ -20,22 +20,22 @@ class Solution(object):
         res = []
         backtrace(nums, [])
         return res
-        # res = []
-    #     self.backtracing(res,nums,[])
-    #     return res
-    # def backtracing(self,res,nums,tmp):
-    #     #触发结束条件
-    #     if len(nums)==len(tmp):
-    #         res.append(tmp[:])
-    #     for i in range(len(nums)):
-    #         #排除不合法条件
-    #         if nums[i] in tmp:
-    #             continue
-    #         #做选择
-    #         tmp.append(nums[i])
-    #         #进入下一层决策
-    #         self.backtracing(res,nums,tmp)
-    #         tmp.pop()
-s = Solution()
+
+
+from typing import List
+class SolutionII:
+    def permuteUnique(self, nums: List[int]) -> List[List[int]]:
+        def backtrace(nums,tmp):
+            if len(tmp) == size:
+                res.append(tmp[:])
+            visited = set()#同层去重，每一层只能选择这一层还没有被选过的元素
+            for i in range(len(nums)):
+                if nums[i] in visited: continue
+                visited.add(nums[i])
+                backtrace(nums[:i]+nums[i+1:],tmp+[nums[i]])
+        res, size = [], len(nums)
+        backtrace(nums,[])
+        return res
+s = SolutionII()
 res = s.permuteUnique([1,1,2])
 print(res)

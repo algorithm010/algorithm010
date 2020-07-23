@@ -556,6 +556,19 @@ def permute(self, nums: List[int]) -> List[List[int]]:
 
 #### 全排列II
 ```python
+class SolutionII:
+    def permuteUnique(self, nums: List[int]) -> List[List[int]]:
+        def backtrace(nums,tmp):
+            if len(tmp) == size:
+                res.append(tmp[:])
+            for i in range(len(nums)):
+                backtrace(nums[:i]+nums[i+1:],tmp+[nums[i]])
+        res, size = [], len(nums)
+        backtrace(nums,[])
+        return res
+```
+上面在判重的时候，是在写入res时手动遍历判重，其实可以直接用set记录中间结果  
+```python
 def permuteUnique(self, nums):
     """
     :type nums: List[int]
