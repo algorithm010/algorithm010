@@ -22,7 +22,7 @@ class Solution:
         #         lowest = prices[i]
         #     dp[i] = max(dp[i - 1], prices[i] - lowest)#状态转移只与前一个状态有关
         # return dp[-1]
-        # if not prices: return 0
+        if not prices: return 0
         pre, cur, lowest = 0,0,prices[0]
         for i in range(len(prices)):
             if prices[i] < lowest:

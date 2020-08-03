@@ -17,12 +17,20 @@ class Solution:
         # coins.sort()
         # res = dfs(coins,amount,len(coins)-1,0,float('inf'))
         # return res if res!=float('inf') else -1
-        dp = [float('inf')] * (amount + 1)
+        dp = [float('inf')]*(amount+1)
         dp[0] = 0
-        for i in range(amount + 1):
+        #dp[i]代表拼凑出i元的最少纸币数
+        for i in range(amount+1):
             for coin in coins:
-                if i >= coin:  # 实际上是min(dp[i-coin1]+1,dp[i-coin2]+1,dp[i-coin3]+1)
-                    dp[i] = min(dp[i - coin] + 1, dp[i])
-        return dp[-1] if dp[-1] != float('inf') else -1
+                if i >= coin:
+                    dp[i] = min(dp[i-coin] + 1,dp[i])
+        return dp[-1] if dp[-1]!=float('inf') else -1
+        # dp = [float('inf')] * (amount + 1)
+        # dp[0] = 0
+        # for i in range(amount + 1):
+        #     for coin in coins:
+        #         if i >= coin:  # 实际上是min(dp[i-coin1]+1,dp[i-coin2]+1,dp[i-coin3]+1)
+        #             dp[i] = min(dp[i - coin] + 1, dp[i])
+        # return dp[-1] if dp[-1] != float('inf') else -1
 
 

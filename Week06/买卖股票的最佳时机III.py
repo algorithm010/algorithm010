@@ -5,6 +5,17 @@
 from typing import List
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
+        if not prices: return 0
+        # dp[i][k][0,1] 0 未持有 1 持有
+        dp = [[[0, 0] for i in range(3)] for i in range(len(prices))]
+        dp[0][1][0] = dp[0][2][0] = 0
+        dp[0][1][1] = dp[0][2][1] = -prices[0]
+        for i in range(1, len(prices)):
+            for k in range(1, 3):
+                dp[i][k][0] = max(dp[i - 1][k][0], dp[i - 1][k][1] + prices[i])  # hold,sell
+                # 买入的时候计算次数
+                dp[i][k][1] = max(dp[i - 1][k][1], dp[i - 1][k - 1][0] - prices[i])  # hold,buy
+        return dp[-1][-1][0]
         # if not prices: return 0
         # #0未买入 1 买入一次 2 卖出一次 3 买入两次 4 卖出2次
         # # dp = [[0]*len(prices) for _ in range(2*2+1)]
@@ -23,14 +34,15 @@ class Solution:
         #     dp[i][4] = max(dp[i-1][4], dp[i-1][3] + prices[i])
         # #最后手头没有股票剩余，实际收益最高
         # return dp[-1][4]
-        in_1, in_2 = float('-inf'), float('-inf')
-        out_1, out_2 = 0, 0
-        for p in prices:
-            in_1 = max(in_1, -p)
-            out_1 = max(out_1, in_1 + p)
-            in_2 = max(in_2, out_1 - p)
-            out_2 = max(out_2, in_2 + p)
-        return out_2
+
+        # in_1, in_2 = float('-inf'), float('-inf')
+        # out_1, out_2 = 0, 0
+        # for p in prices:
+        #     in_1 = max(in_1, -p)
+        #     out_1 = max(out_1, in_1 + p)
+        #     in_2 = max(in_2, out_1 - p)
+        #     out_2 = max(out_2, in_2 + p)
+        # return out_2
 
 
 s = Solution()
