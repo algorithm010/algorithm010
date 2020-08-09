@@ -5,7 +5,7 @@
 class Solution:
     def toLowerCase(self, str: str) -> str:
         # return str.lower()
-        # A 65 a 97 差32
+        # A 65 a 97 差32  '0'的ascii 为48
         # ord('x')-->ascii值
         # chr(ascii值)-->str
         res = ''
