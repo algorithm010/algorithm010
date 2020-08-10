@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad77f17f-1ded-48f1-b0ae-9062bc5fe713" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/仅仅是翻转字符.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/回文数.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/组合.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/组合总和.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/组合总和II.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NOTE.md" beforeDir="false" afterPath="$PROJECT_DIR$/NOTE.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/每日一题6_27_全排列.py" beforeDir="false" afterPath="$PROJECT_DIR$/每日一题6_27_全排列.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/每日一题6_27_全排列II.py" beforeDir="false" afterPath="$PROJECT_DIR$/每日一题6_27_全排列II.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Week06/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Week06/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Week06/解码方法I.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Week06/解码方法I.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Week07/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Week07/.idea/workspace.xml" afterDir="false" />
@@ -38,7 +30,7 @@
     <session id="1127985228">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.3" value="1" />
@@ -243,7 +235,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="777" />
@@ -451,15 +443,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1280" height="777" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17609046" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17609046" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49919224" visible="true" weight="0.3041096" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49919224" weight="0.3240876" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.34246576" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
