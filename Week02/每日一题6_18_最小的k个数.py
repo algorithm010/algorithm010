@@ -46,7 +46,7 @@ class Solution:
             pivot = self.partition(arr, left, right)  # left, right, split_ind 都是原始 index
             if pivot == k:  # 在 split_ind 左边有 k 个元素，全部不大于 pivot
                 break
-            elif pivot > k:
+            elif pivot > k:#如果左边还有大于k个数，继续在左边找
                 right = pivot - 1  # 不-1 会陷入死循环
             else:
                 left = pivot + 1  # 不 +1 会陷入死循环
@@ -66,7 +66,7 @@ class SolutionII:
     # 小根堆 如果当前值大于堆顶元素 才能入堆
     def getLeastNumbers(self, nums, k):
         if k == 0: return []
-        my_heap = [-x for x in nums[:k]]
+        my_heap = [-x for x in nums[:k]]#维护大小为k的小顶堆
         heapq.heapify(my_heap)
         for i in range(k,len(nums)):
             if -nums[i] > my_heap[0]:#小根堆最后留下的是最大的k个值，所以只有大于堆顶才能进

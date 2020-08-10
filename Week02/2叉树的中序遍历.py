@@ -48,19 +48,18 @@ class Solution(object):
     #         self.inorder(root.right, res)
     # 击败21%
     def inorderTraversal(self, root: TreeNode) -> List[int]:
-        if root is None: return []
-        res, stack = [], []
-        cur = root
-        while cur is not None or stack:
-            while cur is not None:  # 确保了能一直往左走
-                stack.append(cur)
-                cur = cur.left
-            cur = stack.pop()  # 相当于等到这次的根节点
-            res.append(cur.val)
-            cur = cur.right
+        if not root: return []
+        stack, res = [], []
+        while root or stack:
+            while root:
+                stack.append(root)
+                root = root.left
+            root = stack.pop()
+            res.append(root.val)
+            root = root.right
         return res
 
 
 
 
-# leetcode submit region end(Prohibit modification and deletion)
+    # leetcode submit region end(Prohibit modification and deletion)

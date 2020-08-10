@@ -269,7 +269,7 @@ def levelOrder(self, root: 'Node') -> List[List[int]]:
         if root is None: return []
         quene,res = [root],[]
         while quene:
-            cur = stack1.pop()
+            cur = quene.pop()
             if cur is not None:
                 print(type(cur))#cur is Node
                 #tmp = []
@@ -278,7 +278,7 @@ def levelOrder(self, root: 'Node') -> List[List[int]]:
                 #res.append(tmp)
                 res.append([item.val for item in cur])
                 for child in cur.children:
-                    stack1.append(child)
+                    quene.append(child)
         return res
 ```
 改进之后，这里 实际上quene每次存储的都是每一层的所有节点，  
@@ -302,6 +302,110 @@ def levelOrder(self,root):
         quene = tmp_quene
     return res
 ```
+
+#### N叉树的前序遍历
+```python
+class Solution:
+    def preorder(self, root: 'Node') -> List[int]:
+      #dfs
+    #   if not root: return []
+    #   res = []
+    #   self.dfs(root,res)
+    #   return res 
+    # def dfs(self,root,res):
+    #     res.append(root.val)
+    #     for node in root.children:
+    #         self.dfs(node,res)
+        #bfs 根左右
+        if not root: return[]
+        stack, res = [root], []
+        while stack:
+            cur = stack.pop()
+            res.append(cur.val)
+            for node in cur.children[::-1]:
+                stack.append(node)
+        return res 
+
+```
+
+#### N叉树的后序遍历
+```python
+class Solution:
+    def postorder(self, root: 'Node') -> List[int]:
+        # #dfs
+        # if not root: return []
+        # stack, res = [root],[]
+        # while stack:
+        #     cur = stack.pop()
+        #     for node in cur.children:
+        #         stack.append(node)
+        #     res.append(cur.val)
+        # return res[::-1]
+        #dfs
+        if not root: return []
+        res = []
+        self.dfs(root,res)
+        return res
+    def dfs(self, root, res):
+        for node in root.children:
+            self.dfs(node,res)
+        res.append(root.val)
+```
+
+#### N叉树的最大深度
+```python
+class Solution:
+    def maxDepth(self, root: 'Node') -> int:
+        #DFS
+        # if not root: return 0
+        # if not root.children: return 1
+        # tmp = [self.maxDepth(node) for node in root.children]
+        # return max(tmp) + 1
+        #bfs
+        if not root: return 0
+        # if not root.children: return 1    
+        stack, depth = [root], 0
+        while stack:
+            depth += 1
+            for i in range(len(stack)):
+                cur = stack.pop(0)
+                for node in cur.children:
+                    stack.append(node)
+        return depth 
+```
+
+#### 二叉树的最大深度
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution:
+    def maxDepth(self, root: TreeNode) -> int:
+        #bfs
+        if not root: return 0
+        stack, depth = [root], 0
+        while stack:
+            for i in range(len(stack)):
+                cur = stack.pop(0)#注意到这里和后序遍历 层序遍历一致 都是pop(0)
+                if cur.left: stack.append(cur.left)
+                if cur.right: stack.append(cur.right)
+            depth += 1
+        return depth
+       #dfs
+    #    if not root: return 0
+    #    return max(self.maxDepth(root.left),self.maxDepth(root.right)) + 1
+       
+```
+
+#### 二叉树的最小深度
+```python
+
+```
+
 
 #### 数组中最小的k个数
 1.暴力解法 对数组进行排序，返回前k个
