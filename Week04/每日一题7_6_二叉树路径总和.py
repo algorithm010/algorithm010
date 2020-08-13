@@ -35,6 +35,4 @@ class Solution:
         if not root: return False
         if not root.left and not root.right:
             return root.val == num
-            # if num == root.val:
-            #     return True
         return self.hasPathSumI(root.left, num - root.val) or self.hasPathSumI(root.right, num - root.val)

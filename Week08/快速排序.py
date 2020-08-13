@@ -4,6 +4,7 @@
 
 
 # 快速排序的思想是在数组中找一个pivot使得左边比pivot小，右边比pivot大，然后对左右两侧元素同逻辑处理
+# 也是不稳定的
 class Solution:
     def quick_sort(self, nums, left, right):
         if left >= right:

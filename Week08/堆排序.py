@@ -2,6 +2,7 @@
 # # Author : Ray
 # # Data : 2020/7/28 9:04 PM
 #
+# 不稳定
 class Solution:
     def heap_sort(self, nums):
         self.build_heap(nums)

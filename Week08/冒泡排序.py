@@ -2,6 +2,7 @@
 # Author : Ray
 # Data : 2020/7/28 8:08 PM
 
+# 冒泡排序是稳定的
 class Solution:
     def bubblesort(self,nums):
         for i in range(len(nums)):

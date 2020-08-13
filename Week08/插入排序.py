@@ -4,6 +4,7 @@
 
 
 # 插入排序的思想是，假设数组分作两区，A区一直有序，每次从B区中取出元素，插入A区的合适位置
+# 所以是不稳定的
 class Solution:
     def insertsort(self, nums):
         for i in range(1,len(nums)):

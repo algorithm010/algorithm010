@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d7db14f-12b3-4a5d-bb11-33a45c31eefc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/组合总和IV.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Week01/无重复字符的最长子串.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Week03/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Week03/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Week06/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Week06/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Week06/解码方法I.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Week06/解码方法I.py" afterDir="false" />
@@ -22,7 +22,7 @@
     <session id="341931251">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.5" value="1" />
@@ -306,7 +306,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22465754" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.22465754" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.43150684" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />

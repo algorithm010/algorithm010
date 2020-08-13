@@ -19,21 +19,16 @@ class Solution:
     def reverse_pairs(self, nums, left, right, temp):#在数组 nums 的区间 [l,r] 统计逆序对
         if left == right:
             return 0
-        mid = (left + right) >> 1
-        left_pairs = self.reverse_pairs(nums, left, mid, temp)
-        right_pairs = self.reverse_pairs(nums, mid + 1, right, temp)
-
-        # reverse_pairs = left_pairs + right_pairs
-        # if nums[mid] <= nums[mid + 1]:
-        #     return reverse_pairs
-
-        reverse_cross_pairs = self.merge_and_count(nums, left, mid, right, temp)
-        return left_pairs + right_pairs + reverse_cross_pairs
+        mid = left + ((right-left) >> 1)
+        lpairs = self.reverse_pairs(nums, left, mid, temp)
+        rpairs = self.reverse_pairs(nums, mid + 1, right, temp)
+        cross_pairs = self.merge_and_count(nums, left, mid, right, temp)
+        return lpairs + rpairs + cross_pairs
 
     def merge_and_count(self, nums, left, mid, right, temp):
         for i in range(left, right + 1):
             temp[i] = nums[i]
-        i,j,res = left, mid+1,0
+        i,j,count = left, mid+1,0
         for k in range(left, right + 1):
             if i == mid + 1:#左侧处理完之后
                 nums[k] = temp[j]
@@ -47,6 +42,10 @@ class Solution:
             else:
                 nums[k] = temp[j]#后边的小，将后边的值归并到tmp中，累计计数值
                 j += 1
-                res += (mid - i + 1)#
-        return res
+                count += (mid - i + 1)#
+        return count
 
+
+s = Solution()
+res = s.reversePairs(nums=[5,2,6,1])
+print(res)

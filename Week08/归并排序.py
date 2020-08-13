@@ -2,7 +2,8 @@
 # # Author : Ray
 # # Data : 2020/7/28 8:44 PM
 #
-# # 归并排序的思想是将数组分作AB两区，AB两区都区内有序之后，合并这两个区
+# 归并排序的思想是将数组分作AB两区，AB两区都区内有序之后，合并这两个区
+# 如果归并的时候 有相同的值，将左侧的放到tmp中就是稳定的
 class Solution:
     def merge_sort(self, nums):
         if len(nums)<2:
