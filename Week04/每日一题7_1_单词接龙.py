@@ -69,9 +69,7 @@ class Solution:
                     quene.append((word, cur, steps + 1, path+[word]))
         return 0  # 不存在这样的转换序列
 
-
 # leetcode submit region end(Prohibit modification and deletion)
-
 
 
 from collections import defaultdict

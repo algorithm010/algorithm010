@@ -2,9 +2,12 @@
 # Author : Ray
 # Data : 2020/7/20 11:12 PM
 
+
+
 SIZE = 7
 parent =[-1] * SIZE
 rank = [0] * SIZE
+# 并查集就是实现了两个方法 一个find一个union
 def find(x, parent):
     node = x
     while parent[node] != -1:
